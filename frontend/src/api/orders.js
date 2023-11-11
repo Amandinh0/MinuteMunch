@@ -1,5 +1,7 @@
 import axios from "axios";
+import { FAKE_ORDER } from "./fakeData";
 const BASE_ROOT = "http://localhost:8080";
+
 
 
 class OrdersAPI {
@@ -15,9 +17,19 @@ class OrdersAPI {
         return response.data;
     }
 
-    // static async postOrder(order) {
-    //     const response = await axios.post(`${BA}`)
-    // }
+    static async postOrder(order) {
+        const json = await this.stringify(order);
+
+        const response = await axios.post(`${BASE_ROOT}/api/orders`, FAKE_ORDER);
+        return response.data;
+    }
+
+    static async stringify(object) {
+        const json =  await JSON.stringify(FAKE_ORDER);
+        console.log(typeof(json));
+        console.log(typeof(FAKE_ORDER));
+        return json;
+    }
 }
 
 export default OrdersAPI;

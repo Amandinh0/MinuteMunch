@@ -19,14 +19,22 @@ function App() {
     } catch (err) {
       console.log(err);
     }
-  }
+  };
 
   const fetchOrders = async () =>{
     try
     {setOrders(await OrdersAPI.fetchOrders());} 
     catch(err)
     {console.log(err);}
-  }
+  };
+
+  const postOrders = async order => {
+    try {
+      const response = await OrdersAPI.postOrder(order);
+    } catch(err) {
+      console.log(err);
+    }
+  };
 
   useEffect(() => {
     fetchOrders();
@@ -34,7 +42,12 @@ function App() {
 
   useEffect(() => {
     fetchSingleOrder("afairbanks@umass.edu");
-  }, [])
+  }, []);
+
+  useEffect(() => {
+    postOrders();
+  }, []);
+
 
 	return (
 		<Router>

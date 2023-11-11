@@ -1,0 +1,52 @@
+.split-layout,
+.driver-layout {
+	display: flex;
+	height: 100vh; /* 100% of the viewport height */
+}
+
+.left-half,
+.right-half,
+.loginpopup {
+	flex: 1; /* Equal width for both halves */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #f0f0f0; /* Set background color as needed */
+}
+
+.left-half {
+	background-color: #e0e0e0; /* Set background color as needed */
+}
+
+.loginpopup button,
+.left-half button,
+.right-half button {
+	padding: 10px;
+	font-size: 16px;
+}
+
+.order-popup button {
+	margin-top: 3%;
+	margin-left: 3%;
+	padding: 100px;
+	font-size: 16px;
+}
+
+.grid-button {
+	padding: 100px;
+	display: inline-block;
+	width: 100px; /* Set a fixed width for each button */
+	height: 40px; /* Set a fixed height for each button */
+	margin: 5px; /* Set margin between buttons */
+	background-color: #3498db;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+/* Hover effect on the buttons */
+.grid-button:hover {
+	background-color: #2980b9; /* Hover color */
+}

@@ -1,23 +1,56 @@
 .split-layout {
-    display: flex;
-    height: 100vh; /* 100% of the viewport height */
-  }
-  
-  .left-half,
-  .right-half {
-    flex: 1; /* Equal width for both halves */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f0f0f0; /* Set background color as needed */
-    }
-  
-  .left-half {
-    background-color: #e0e0e0; /* Set background color as needed */
-  }
-  
-  .left-half button,
-  .right-half button {
-    padding: 10px;
-    font-size: 16px;
-  }
+	display: flex;
+	height: 100vh; /* 100% of the viewport height */
+}
+
+.left-half,
+.right-half {
+	flex: 1; /* Equal width for both halves */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #f0f0f0; /* Set background color as needed */
+}
+
+.left-half {
+	color: white;
+	overflow: hidden;
+	background: #c04848; /* fallback for old browsers */
+	background: linear-gradient(rgb(235, 226, 196, 0.8), rgb(235, 226, 196, 0.8)),
+		url("../../public/Delivery-Driver-Safety-Tips-HERO.jpeg"); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.right-half {
+	color: white;
+	overflow: hidden;
+	background: #c04848; /* fallback for old browsers */
+	background: linear-gradient(rgb(87, 0, 0, 0.8), rgb(87, 0, 0, 0.8)),
+		url("../../public/istockphoto-495799500-612x612.jpeg"); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.left-half button,
+.right-half button {
+	padding: 60%;
+	font-size: 16px;
+	background-color: transparent;
+}
+
+.left-half button:hover,
+.right-half button:hover {
+	background-color: white;
+	cursor: pointer;
+}
+
+
+
+.left-half button {
+	font-family: "Courier New", Courier, monospace;
+}
+
+.right-half button {
+	font-family: "Courier New", Courier, monospace;
+}

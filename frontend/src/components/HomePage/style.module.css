@@ -1,52 +1,70 @@
-.split-layout,
-.driver-layout {
+body {
+	margin: 0;
+	height: 100vh;
+}
+
+section {
 	display: flex;
-	height: 100vh; /* 100% of the viewport height */
+	height: 100vh;
+	max-width: 100vw;
+}
+
+section div {
+	display: flex;
+	flex: 1;
+	justify-content: space-evenly;
+	align-items: space-evenly;
+	overflow: hidden;
+	transition: all 0.35s ease-in-out;
+}
+
+section div:hover {
+	flex-grow: 2;
 }
 
 .left-half,
-.right-half,
-.loginpopup {
-	flex: 1; /* Equal width for both halves */
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: #f0f0f0; /* Set background color as needed */
+.right-half {
+	z-index: 0;
+	position: flex;
+	width: 60vw;
+	height: 100%;
+	object-fit: contain;
 }
 
-.left-half {
-	background-color: #e0e0e0; /* Set background color as needed */
-}
-
-.loginpopup button,
-.left-half button,
-.right-half button {
-	padding: 10px;
-	font-size: 16px;
-}
-
-.order-popup button {
-	margin-top: 3%;
-	margin-left: 3%;
-	padding: 100px;
-	font-size: 16px;
-}
-
-.grid-button {
-	padding: 100px;
-	display: inline-block;
-	width: 100px; /* Set a fixed width for each button */
-	height: 40px; /* Set a fixed height for each button */
-	margin: 5px; /* Set margin between buttons */
-	background-color: #3498db;
+/*
+div button {
+	border: 2px solid white; Or any color that contrasts with the background 
+	background-color: rgba(0, 0, 0, 0.5); /* Slightly transparent black 
 	color: #fff;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-	transition: background-color 0.3s ease;
+	padding: 10px 20px;
+	font-size: 20px;
+	font-family: "Inter";
+	font-weight: 700;
+	cursor: pointer; /* To show it's clickable 
+	transition: all 0.25s ease-in-out;
+} 
+*/
+
+div button:hover {
+	color: rgb(216, 14, 14);
+	font-size: 74px;
+	transition: all 0.25s ease-in-out;
 }
 
-/* Hover effect on the buttons */
-.grid-button:hover {
-	background-color: #2980b9; /* Hover color */
+/* div {
+	filter: blur(5px);
+} */
+
+/* div:hover {
+	filter: none;
+	transition: all 0.25s ease-in-out;
+} */
+
+div button {
+	font-size: 36px;
+	font-family: "Inter";
+	font-weight: 900;
+	background-color: transparent;
+	border-color: transparent;
+	transition: all 0.25s ease-in-out;
 }

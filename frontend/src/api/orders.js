@@ -18,17 +18,15 @@ class OrdersAPI {
     }
 
     static async postOrder(order) {
-        const json = await this.stringify(order);
-
-        const response = await axios.post(`${BASE_ROOT}/api/orders`, FAKE_ORDER);
+        const response = await axios.post(`${BASE_ROOT}/api/orders`, order);
+        console.log(order);
         return response.data;
     }
 
-    static async stringify(object) {
-        const json =  await JSON.stringify(FAKE_ORDER);
-        console.log(typeof(json));
-        console.log(typeof(FAKE_ORDER));
-        return json;
+    static async deleteOrder(email) {
+        const response = await axios.delete(`${BASE_ROOT}/api/orders/${email}`);
+        console.log(response.data);
+        return response.data;
     }
 }
 

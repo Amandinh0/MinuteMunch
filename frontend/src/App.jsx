@@ -36,18 +36,23 @@ function App() {
     }
   };
 
+  const deleteOrder = async email => {
+    try {
+      const response = await OrdersAPI.deleteOrder(email);
+    } catch(err) {
+      console.log(err);
+    }
+  };
+
   useEffect(() => {
     fetchOrders();
   }, []);
 
   useEffect(() => {
-    fetchSingleOrder("afairbanks@umass.edu");
+    fetchSingleOrder();    
   }, []);
 
-  useEffect(() => {
-    postOrders();
-  }, []);
-
+  
 
 	return (
 		<Router>

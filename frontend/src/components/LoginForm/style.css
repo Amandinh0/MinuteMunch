@@ -19,6 +19,7 @@
     padding: 20px;
     border: 1px solid #999;
     overflow: auto;
+    text-align: center;
 }
    
 .close-icon {
@@ -36,3 +37,4 @@
     border: 1px solid #999;
     font-size: 20px;
 }
+

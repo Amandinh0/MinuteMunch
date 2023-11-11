@@ -11,20 +11,19 @@ import OrdersAPI from "./api/orders";
 function App() {
 
   const [ordersList, setOrders] = useState([]);
-  //const [currentOrder, setCurrentOrder] = useState();
+  const [currentOrder, setCurrentOrder] = useState();
 
-  // async function fetchOrders() {
-  //   try {
-  //     const orderList = await OrdersAPI.fetchOrders();
-  //   } catch (error) {
-  //     alert("error in fetch orders");
-  //   }
-  // }
+  const fetchSingleOrder = async email => {
+    try {
+      setCurrentOrder(await OrdersAPI.fetchSingleOrder(email));
+    } catch (err) {
+      console.log(err);
+    }
+  }
 
   const fetchOrders = async () =>{
-    
     try
-    {setOrders(OrdersAPI.fetchOrders());} 
+    {setOrders(await OrdersAPI.fetchOrders());} 
     catch(err)
     {console.log(err);}
   }
@@ -33,7 +32,9 @@ function App() {
     fetchOrders();
   }, []);
 
-  //useEffect(() =>)
+  useEffect(() => {
+    fetchSingleOrder("afairbanks@umass.edu");
+  }, [])
 
 	return (
 		<Router>

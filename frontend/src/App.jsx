@@ -2,7 +2,7 @@ import './styles/styles.css';
 import SplitLayout from './components/SplitLayout';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import ConsumerLayout from './pages/ConsumerLayout';
-import DriverLayout from './pages/DriverLayout';
+import DriverLayout from './components/DriverLogin/DriverLogin';
 
 
 function App() {

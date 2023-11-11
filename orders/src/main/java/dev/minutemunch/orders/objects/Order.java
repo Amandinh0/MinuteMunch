@@ -7,7 +7,6 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.List;
 import org.bson.types.ObjectId;
-import org.springframework.data.mongodb.core.mapping.DocumentReference;
 
 @Document(collection = "orders")
 @Data
@@ -23,7 +22,7 @@ public class Order {
 
     private List<String> drinkList;
 
-    private Float diningSwipes;
+    private Integer diningSwipes;
 
     private String eta;
 
@@ -35,8 +34,8 @@ public class Order {
 
     private String name;
 
-    public Order(Location location, List<String> foodList, List<String> drinkList, Float diningSwipes, String eta, Float payout, String phoneNumber, String email, String name) {
-        this.location = location;
+    private String diningHall;
+    public Order(List<String> foodList, List<String> drinkList, Integer diningSwipes, String eta, Float payout, String phoneNumber, String email, String name, String diningHall) {
         this.foodList = foodList;
         this.drinkList = drinkList;
         this.diningSwipes = diningSwipes;
@@ -45,6 +44,6 @@ public class Order {
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.name = name;
+        this.diningHall = diningHall;
     }
-
 }

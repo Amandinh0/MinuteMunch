@@ -1,42 +1,31 @@
-import React from "react";
-import {useNavigate} from "react-router-dom"; 
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Popup from "../LoginForm/Loginform";
+import "./style.module.css"
 
-function DriverLayout(){
-
-    const navigate = useNavigate(); 
-
-    function loginpopup(){
-        let userInput = '';
-        let userInput2 = '';
-
-        while (userInput === '' || userInput === null) 
-        {
-            userInput = prompt('Enter Username:');
-        }
-        console.log('Username entered:', userInput);
-
-        while (userInput2 === '' || userInput2 === null) 
-        {
-            userInput2 = prompt('Enter Password:');
-        }
-        console.log('Password entered:', userInput2);
-
-        navigate('/driverHome/driverPage');
+function DriverLayout() {
+    const [isOpen, setIsOpen] = useState(false);
+   
+    const togglePopup = () => {
+      setIsOpen(!isOpen);
     }
-
-    return(
-        <>
-        <div>
-            <h1>Driver Login Page</h1>
-            <div className="driver-layout">
-                <div className="loginpopup">
-                    {/* Button for the login pop up */}
-                    <button onClick={loginpopup}>Login</button>
-                </div>
-            </div>
-        </div>
-    </>
-    )
-}
+   
+    return <div>
+      <input
+        type="button"
+        value="Click to Open Popup"
+        onClick={togglePopup}
+      />
+      <p className = "para1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      {isOpen && <Popup
+        content={<>
+          <b>Design your Popup</b>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <button>Test button</button>
+        </>}
+        handleClose={togglePopup}
+      />}
+    </div>
+  }
 
 export default DriverLayout

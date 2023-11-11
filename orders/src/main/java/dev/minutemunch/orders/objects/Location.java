@@ -16,7 +16,24 @@ public class Location {
     @Id
     private ObjectId id;
     private String residenceHall;
+
+    public void setResidenceHall(String newHall) {
+        this.residenceHall = newHall;
+    }
+
+    public String getResidenceHall() {
+        return this.residenceHall;
+    }
     private String residenceArea;
+
+    public void setResidenceArea(String newArea) {
+        this.residenceArea = newArea;
+    }
+
+    public String getResidenceArea() {
+        return this.residenceArea;
+    }
+
 
     public Location(String residenceHall, String residenceArea) {
         this.residenceArea = residenceArea;

@@ -1,0 +1,206 @@
+{
+    "Baker": {
+        "residenceHall":"Baker",
+        "residenceArea":"Central"
+    },
+    "Birch": {
+        "residenceHall":"Birch",
+        "residenceArea":"Honors"
+    },
+    "Brett": {
+        "residenceHall":"Brett",
+        "residenceArea":"Central"
+    },
+    "Brooks": {
+        "residenceHall":"Brooks",
+        "residenceArea":"Central"
+    },
+    "Brown": {
+        "residenceHall":"Brown",
+        "residenceArea":"Sylvan"
+    },
+    "Butterfield": {
+        "residenceHall":"Butterfield",
+        "residenceArea":"Central"
+    },
+    "Cance": {
+        "residenceHall":"Cance",
+        "residenceArea":"Southwest"
+    },
+    "Cashin": {
+        "residenceHall":"Cashin",
+        "residenceArea":"Sylvan"
+    },
+    "Chadbourne": {
+        "residenceHall":"Chadbourne",
+        "residenceArea":"Central"
+    },
+    "Coolidge": {
+        "residenceHall":"Coolidge",
+        "residenceArea":"Southwest"
+    },
+    "Crabtree": {
+        "residenceHall":"Crabtree",
+        "residenceArea":"Northeast"
+    },
+    "Crampton": {
+        "residenceHall":"Crampton",
+        "residenceArea":"Southwest"
+    },
+    "Dickinson": {
+        "residenceHall":"Dickinson",
+        "residenceArea":"OHill"
+    },
+    "Dwight": {
+        "residenceHall":"Dwight",
+        "residenceArea":"Northeast"
+    },
+    "Elm": {
+        "residenceHall":"Elm",
+        "residenceArea":"Honors"
+    },
+    "Emerson": {
+        "residenceHall":"Emerson",
+        "residenceArea":"Southwest"
+    },
+    "Field": {
+        "residenceHall":"Field",
+        "residenceArea":"OHill"
+    },
+    "Gorman": {
+        "residenceHall":"Gorman",
+        "residenceArea":"Central"
+    },
+    "Grayson": {
+        "residenceHall":"Grayson",
+        "residenceArea":"OHill"
+    },
+    "Greenough": {
+        "residenceHall":"Greenough",
+        "residenceArea":"Central"
+    },
+    "Hamlin": {
+        "residenceHall":"Hamlin",
+        "residenceArea":"Northeast"
+    },
+    "James": {
+        "residenceHall":"James",
+        "residenceArea":"Southwest"
+    },
+    "Adams": {
+        "residenceHall":"Adams",
+        "residenceArea":"Southwest"
+    },
+    "QuincyAdams": {
+        "residenceHall":"QuincyAdams",
+        "residenceArea":"Southwest"
+    },
+    "Johnson": {
+        "residenceHall":"Johnson",
+        "residenceArea":"Northeast"
+    },
+    "Kennedy": {
+        "residenceHall":"Kennedy",
+        "residenceArea":"Southwest"
+    },
+    "Knowlton": {
+        "residenceHall":"Knowlton",
+        "residenceArea":"Northeast"
+    },
+    "Leach": {
+        "residenceHall":"Leach",
+        "residenceArea":"Northeast"
+    },
+    "Lewis": {
+        "residenceHall":"Lewis",
+        "residenceArea":"Northeast"
+    },
+    "Linden": {
+        "residenceHall":"Linden",
+        "residenceArea":"Honors"
+    },
+    "MacKimmie": {
+        "residenceHall":"MacKimmie",
+        "residenceArea":"Southwest"
+    },
+    "Maple": {
+        "residenceHall":"Maple",
+        "residenceArea":"Honors"
+    },
+    "MaryLyon": {
+        "residenceHall":"MaryLyon",
+        "residenceArea":"Northeast"
+    },
+    "McNamara": {
+        "residenceHall":"McNamara",
+        "residenceArea":"Sylvan"
+    },
+    "Melville": {
+        "residenceHall":"Melville",
+        "residenceArea":"Southwest"
+    },
+    "Moore": {
+        "residenceHall":"Moore",
+        "residenceArea":"Southwest"
+    },
+    "NAptA": {
+        "residenceHall":"NAptA",
+        "residenceArea":"NorthRes"
+    },
+    "NAptB": {
+        "residenceHall":"NAptB",
+        "residenceArea":"NorthRes"
+    },
+    "NAptC": {
+        "residenceHall":"NAptC",
+        "residenceArea":"NorthRes"
+    },
+    "NAptD": {
+        "residenceHall":"NAptD",
+        "residenceArea":"NorthRes"
+    },
+    "OakHill": {
+        "residenceHall":"OakHill",
+        "residenceArea":"Honors"
+    },
+    "Patterson": {
+        "residenceHall":"Patterson",
+        "residenceArea":"Southwest"
+    },
+    "Pierpont": {
+        "residenceHall":"Pierpont",
+        "residenceArea":"Southwest"
+    },
+    "Prince": {
+        "residenceHall":"Prince",
+        "residenceArea":"Southwest"
+    },
+    "Sycamore": {
+        "residenceHall":"Sycamore",
+        "residenceArea":"Honors"
+    },
+    "Thatcher": {
+        "residenceHall":"Thatcher",
+        "residenceArea":"Northeast"
+    },
+    "Thoreau": {
+        "residenceHall":"Thoreau",
+        "residenceArea":"Southwest"
+    },
+    "VanMeter": {
+        "residenceHall":"VanMeter",
+        "residenceArea":"Central"
+    },
+    "Washington": {
+        "residenceHall":"Washington",
+        "residenceArea":"Southwest"
+    },
+    "Webster": {
+        "residenceHall":"Webster",
+        "residenceArea":"OHill"
+    },
+    "Wheeler": {
+        "residenceHall":"Wheeler",
+        "residenceArea":"Central"
+    }
+}

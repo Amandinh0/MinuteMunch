@@ -16,7 +16,7 @@ class OrderService {
         return repository.findAll();
     }
 
-/*    public Optional<Order> singleOrder(String email){
+   public Optional<Order> singleOrder(String email){
         return (repository.findByEmail(email));
-    }*/
+    }
 }

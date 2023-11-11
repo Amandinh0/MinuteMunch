@@ -23,9 +23,9 @@ public class OrderController {
         return new ResponseEntity<List<Order>>(service.findAllOrders(), HttpStatus.OK);
     }
 
-/*    @GetMapping("/{email}")
+    @GetMapping("/{email}")
     //path variable lets framework know we want to convert path varible to string id
     public ResponseEntity<Optional<Order>> getSingleOrder(@PathVariable String email) {
         return new ResponseEntity<Optional<Order>>(service.singleOrder(email), HttpStatus.OK);
-    }*/
+    }
 }

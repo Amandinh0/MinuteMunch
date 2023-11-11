@@ -1,17 +1,15 @@
-import OrderCard from "../components/OrderCard"
+import OrderListItem from "../OrderListItem/OrderListItem";
 
-function Driver(){
-    return(
-    <>
-        <div>
-            <h1>
-                Pending Orders:
-            </h1>
-            <OrderCard />
-            <OrderCard />
-        </div>
-    </>
-    )
+function Driver() {
+	return (
+		<>
+			<div>
+				<h1>Pending Orders:</h1>
+                <OrderListItem />
+                <OrderListItem />
+			</div>
+		</>
+	);
 }
 
-export default Driver
+export default Driver;

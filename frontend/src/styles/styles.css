@@ -1,56 +1,51 @@
-.split-layout {
-	display: flex;
-	height: 100vh; /* 100% of the viewport height */
-}
+.split-layout, .driver-layout {
+    display: flex;
+    height: 100vh; /* 100% of the viewport height */
+  }
 
-.left-half,
-.right-half {
-	flex: 1; /* Equal width for both halves */
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: #f0f0f0; /* Set background color as needed */
-}
+  .left-half,
+  .right-half,
+  .loginpopup {
+    flex: 1; /* Equal width for both halves */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0; /* Set background color as needed */
+    }
+  
+  .left-half {
+    background-color: #e0e0e0; /* Set background color as needed */
+  }
 
-.left-half {
-	color: white;
-	overflow: hidden;
-	background: #c04848; /* fallback for old browsers */
-	background: linear-gradient(rgb(235, 226, 196, 0.8), rgb(235, 226, 196, 0.8)),
-		url("../../public/Delivery-Driver-Safety-Tips-HERO.jpeg"); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-	background-size: cover;
-	background-repeat: no-repeat;
-}
+  .loginpopup button,
+  .left-half button,
+  .right-half button {
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  .order-popup button {
+    margin-top: 3%;
+    margin-left: 3%;
+    padding: 100px;
+    font-size: 16px;
+  }
 
-.right-half {
-	color: white;
-	overflow: hidden;
-	background: #c04848; /* fallback for old browsers */
-	background: linear-gradient(rgb(87, 0, 0, 0.8), rgb(87, 0, 0, 0.8)),
-		url("../../public/istockphoto-495799500-612x612.jpeg"); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-	background-size: cover;
-	background-repeat: no-repeat;
-}
+  .grid-button {
+    padding: 100px;
+    display: inline-block;
+    width: 100px; /* Set a fixed width for each button */
+    height: 40px; /* Set a fixed height for each button */
+    margin: 5px; /* Set margin between buttons */
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
 
-.left-half button,
-.right-half button {
-	padding: 60%;
-	font-size: 16px;
-	background-color: transparent;
-}
-
-.left-half button:hover,
-.right-half button:hover {
-	background-color: white;
-	cursor: pointer;
-}
-
-
-
-.left-half button {
-	font-family: "Courier New", Courier, monospace;
-}
-
-.right-half button {
-	font-family: "Courier New", Courier, monospace;
-}
+  /* Hover effect on the buttons */
+  .grid-button:hover {
+    background-color: #2980b9; /* Hover color */
+  }

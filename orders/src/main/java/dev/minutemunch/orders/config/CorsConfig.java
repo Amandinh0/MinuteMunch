@@ -1,4 +1,4 @@
-package dev.minutemunch.orders.objects;
+package dev.minutemunch.orders.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
@@ -12,8 +12,8 @@ public class CorsConfig implements WebMvcConfigurer {
         registry.addMapping("/**")
                 .allowedOrigins("*") // or specify specific origins
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
-                .allowedHeaders("Authorization", "Content-Type", "X-Requested-With")
-                .allowCredentials(true)
-                .maxAge(3600);
+                .allowedHeaders("*")
+                .allowCredentials(false)
+                .maxAge(86400);
     }
 }

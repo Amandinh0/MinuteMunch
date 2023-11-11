@@ -7,8 +7,55 @@ import DriverLayout from "./components/DriverLogin/DriverLogin";
 import Driver from "./components/DriverPage/DriverPage";
 import ConsumerPage from "./components/ConsumerPage/ConsumerPage";
 import ConsumerConfirmation from "./components/ConsumerConfirmation/ConsumerConfirmation";
+import {useEffect, useState} from "react";
+import OrdersAPI from "./api/orders";
 
 function App() {
+
+  const [ordersList, setOrders] = useState([]);
+  const [currentOrder, setCurrentOrder] = useState();
+
+  const fetchSingleOrder = async email => {
+    try {
+      setCurrentOrder(await OrdersAPI.fetchSingleOrder(email));
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const fetchOrders = async () =>{
+    try
+    {setOrders(await OrdersAPI.fetchOrders());} 
+    catch(err)
+    {console.log(err);}
+  };
+
+  const postOrders = async order => {
+    try {
+      const response = await OrdersAPI.postOrder(order);
+    } catch(err) {
+      console.log(err);
+    }
+  };
+
+  const deleteOrder = async email => {
+    try {
+      const response = await OrdersAPI.deleteOrder(email);
+    } catch(err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    fetchOrders();
+  }, []);
+
+  useEffect(() => {
+    fetchSingleOrder();    
+  }, []);
+
+  
+
 	return (
 		<Router>
 			<Routes>

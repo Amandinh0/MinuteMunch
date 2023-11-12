@@ -39,7 +39,7 @@ function ConsumerConfirmation(props){
 
     function postOrder(){
 
-        const pushOrder = new Order("residenceArea",residenceHall, parsedBreakfast, parsedDrink, 3, '4:00', "$4", phoneNumber, email , name, hall); 
+        const pushOrder = new Order("residenceArea",residenceHall, parsedBreakfast, [parsedDrink], 3, '4:00', 4 , phoneNumber, email , name, hall); 
         console.log(pushOrder);
         navigate('/consumerHome/confirmation/checkout');
 

@@ -1,11 +1,21 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import OrdersAPI from "../../api/orders";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Order from "../../order";
 
 
 
-function ConsumerConfirmation(props){
+function ConsumerConfirmation({post}){
+
+  // const [currentOrder, setOrder] = useState();
+
+  // useEffect(() => {
+  //   if (currentOrder) {
+  //     postOrders(currentOrder.state);
+  //   }
+  // },[currentOrder])
+
+
 
     const [phoneNumber, setphoneNumber] = useState(''); 
     const [residenceHall, setresidencehall] = useState(''); 
@@ -30,41 +40,34 @@ function ConsumerConfirmation(props){
     
 
     const location = useLocation();
-    const { breakfast, lunch, drink, hall } = location.state;
+    const { food, drink, hall } = location.state;
 
-    const parsedBreakfast = JSON.parse(breakfast);
-    const parsedLunch = JSON.parse(lunch);
+    const parsedFood = JSON.parse(food);
     const parsedDrink = JSON.parse(drink); 
     const parsedHall = JSON.parse(hall);
 
-    function postOrder(){
+    const payout = 0.33
 
-        const pushOrder = new Order("residenceArea",residenceHall, parsedBreakfast, [parsedDrink], 3, '4:00', 4 , phoneNumber, email , name, hall); 
-        console.log(pushOrder);
+    const postOrder = e => {
+        e.preventDefault();
+        const pushOrder = new Order("residenceArea",residenceHall, parsedFood, parsedDrink, 3, '4:00', 0.77, phoneNumber, email , name, hall); 
+        //"Northeast", "Leach", ["asdlifj", "lfkdna"], ["dasilfnd"], 3 , "4:00", 6.77, "030-933-0320", "TEST@umass.edu", "lfadksjf", "WOOO"
+        console.log(pushOrder.state);
+
+        post(pushOrder);
+
         navigate('/consumerHome/confirmation/checkout');
-
     }
 
     return (
       <div>
         <h1>Confirmation Page</h1>
-        {parsedBreakfast.length > 0 && (
+        {parsedFood.length > 0 && (
           <div>
             <h3>From {parsedHall}</h3>
-            <h2>Breakfast items:</h2>
+            <h2>Food items:</h2>
             <ul>
-              {parsedBreakfast.map((item, index) => (
-                <li key={index}>{item}</li>
-              ))}
-            </ul>
-          </div>
-        )}
-        ``
-        {parsedLunch.length > 0 && (
-          <div>
-            <h2>Lunch items:</h2>
-            <ul>
-              {parsedLunch.map((item, index) => (
+              {parsedFood.map((item, index) => (
                 <li key={index}>{item}</li>
               ))}
             </ul>

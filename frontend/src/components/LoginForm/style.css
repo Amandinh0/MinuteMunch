@@ -1,64 +1,160 @@
+* {
+	font-family: "Noto Sans", sans-serif;
+}
+
 .popup-box {
-    position: absolute;
-    background: #00000050;
-    width: 100%;
-    height: 100vh;
-    top: 0;
-    left: 0;
+	position: absolute;
+	background: #00000050;
+	width: 100%;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	z-index: 3;
+	box-shadow: 4px 4px 100px 100px rgba(0, 0, 0, 0.85);
+	backdrop-filter: blur(5px); /* Apply blur effect */
+	background: rgba(0, 0, 0, 0.2);
 }
 
 .box {
-    position: relative;
-    width: 50%;
-    margin: 0 auto;
-    height: auto;
-    max-height: 70vh;
-    margin-top: calc(100vh - 85vh - 20px);
-    background: #fff;
-    border-radius: 5%;
-    padding: 20px;
-    border: 1px solid #999;
-    overflow: auto;
-    text-align: center;
-}
-   
-.close-icon {
-    content: 'x';
-    cursor: pointer;
-    position: fixed;
-    right: calc(21%);
-    top: calc(100vh - 91vh);
-    background: #ededed;
-    width: 4vw;
-    height: 6.5vh;
-    border-radius: 50%;
-    line-height: 6vh;
-    text-align: center;
-    border: 1px solid #999;
-    font-size: 20px;
+	position: relative;
+	width: 50%;
+	margin: 0 auto;
+	height: auto;
+	max-height: 70vh;
+	margin-top: calc(100vh - 85vh - 20px);
+	background: #fff;
+	border-radius: 2vh;
+	padding: 4vw 5vh;
+	overflow: auto;
+	text-align: center;
+	z-index: 5;
 }
 
-.munchpic{
-    width: auto;
-    height: 20vh;
-    position: relative;
-    top: 70vh;
-    padding: auto, auto, 2vh, 1.4vw;
+.close-icon {
+	position: absolute;
+	top: 10px; /* Adjust as needed */
+	right: 10px; /* Adjust as needed */
+	width: 1.5em;
+	height: 1.5em;
+	border: 2px solid #f83c3c;
+	background-color: #ffc0c0;
+	color: #f83c3c;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+.close-icon::before,
+.close-icon::after {
+	position: absolute;
+	content: "";
+	width: 50%;
+	height: 2px;
+	background-color: #ff8a8a;
+}
+
+.close-icon::before {
+	transform: rotate(45deg);
+}
+
+.close-icon::after {
+	transform: rotate(-45deg);
+}
+
+button {
+	position: absolute;
+	align-items: center;
+	justify-content: center;
+	padding: 10vh 10vw;
+	margin: -5vh -105vw;
+}
+
+.container {
+	display: grid;
+	place-items: center;
+	height: 100vh; /* Full viewport height */
+}
+
+.munchpic {
+	width: auto;
+	height: 20vh;
+	position: relative;
+	top: 0%;
+	padding: auto;
 }
 
 .preLogin {
-  position: absolute;
-  top: 50%;
-  left: 46%;
+	border-radius: 2.5vh;
+	background-color: #ededed;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	/* Adjust padding and remove or adjust margin as needed */
+	padding: 2vh 2vw; /* Example padding */
+	margin: 0; /* Reset margin */
+
+	/* Centering text */
+	text-align: center;
+
+	/* Additional styling */
+	border: 0px solid #ccc; /* Example border */
+	border-radius: 4px; /* Rounded corners */
+
+	/* Font styling */
+	font-weight: 600;
+	font-size: 4vh; /* Adjust font size as needed */
+	color: #333; /* Font color */
+
+	/* Additional styling */
+	box-shadow: 2px 10px 24px rgba(59, 3, 3, 0.7);
+	transition: all 0.2s ease-in-out;
+}
+
+.preLogin:hover {
+	background-color: #ccc;
+	transition: all 0.2s ease-in-out;
+	padding: 2.5vh 2.5vw;
+	font-size: 4.5vh;
 }
 
 .all {
-  height: 100vh;
-  width: 100vw;
-  background-color: "#FDF4E3";
+	height: 100vh;
+	width: 100vw;
+	background-color: "#FDF4E3";
 }
 
-html, body {
-  background-color: "#FDF4E3";
-  height: 100vh;
+html,
+body {
+	background-color: "#FDF4E3";
+	height: 100vh;
+}
+
+.LoginBox {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/* Remove or comment out the next line */
+	/* justify-content: space-evenly; */
+	padding: 20px;
+	gap: 10px;
+}
+
+.rightmove {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.LoginBox b {
+	font-size: 36px;
+}
+
+.spacer {
+	flex-grow: 50;
+	width: 100%; /* Ensure it spans the full width */
 }

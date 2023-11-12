@@ -15,16 +15,20 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Order from "./order";
 import Checkout from "./components/ConsumerConfirmation/Checkout";
 import OrderDetailPreview from "./components/OrderDetailPreview/OrderDetailPreview";
+import DriverPage from "./components/DriverPage/DriverPage";
 
 
 function App() {
 
   const [ordersList, setOrders] = useState([]);
+  const [postOrder, setPostOrder] = useState(null);
   const [currentOrder, setCurrentOrder] = useState(null);
+  const [deletedOrder, setDeleteOrder] = useState(null);
+  const [changeOrder, setChangeOrder] = useState(null);
 
   const fetchSingleOrder = async email => {
     try {
-      setCurrentOrder(await OrdersAPI.fetchSingleOrder(email));
+      setPostOrder(await OrdersAPI.fetchSingleOrder(email));
     } catch (err) {
       console.log(err);
     }
@@ -67,17 +71,23 @@ function App() {
 
   useEffect(() => {
     fetchOrders();
-  }, []); //refresh when root back to home
+  }, [changeOrder]); //refresh when root back to home
 
   useEffect(() => {
-    if (currentOrder) {
-      postOrders(currentOrder.state);
+    if (postOrder) {
+      postOrders(postOrder.state);
     }
     // if (currentOrder) {
     //   const backdkd = new Order("Northeast", "Leach", ["asdlifj", "lfkdna"], ["dasilfnd"], 3 , "4:00", 6.77, "030-933-0320", "TEST@umass.edu", "lfadksjf", "WOOO");
     //   postOrders(backdkd.state);
     // }
-  }, [currentOrder]);
+  }, [postOrder]);
+
+  useEffect(() => {
+    if (deletedOrder) {
+      deleteOrder(deletedOrder.email);
+    }
+  }, [deletedOrder]);
 
   
 
@@ -85,12 +95,12 @@ function App() {
 		<Router>
 			<Routes>
         <Route path="/consumerHome/confirmation/checkout" element={<Checkout />} />
-				<Route path="/consumerHome/confirmation" element={<ConsumerConfirmation post={setCurrentOrder} />} />
+				<Route path="/consumerHome/confirmation" element={<ConsumerConfirmation post={setPostOrder} />} />
 				<Route path="/consumerHome" element={<ConsumerLayout />} />
 				<Route path="/driverHome" element={<DriverLayout />} />
-				<Route path="/driverHome/driverPage" element={<Driver />} />
-        <Route path="/driverHome/driverPage/driverOrderPreview" element={<OrderDetailPreview />} />
-        <Route path="/driverHome/driverPage/driverOrderPreview/driverOrder" element={<OrderDetail />} />
+				<Route path="/driverHome/driverPage" element={<DriverPage orderList={ordersList} onClickPage={setCurrentOrder} />} />
+        <Route path="/driverHome/driverPage/driverOrderPreview" element={<OrderDetailPreview order={currentOrder} onClickItem={setDeleteOrder}/>} />
+        <Route path="/driverHome/driverPage/driverOrderPreview/driverOrder" element={<OrderDetail order={currentOrder} onClickItem={setChangeOrder}/>} />
 				<Route path="/consumerHome/consumerPage" element={<ConsumerPage />} />
 				<Route path="/" element={<SplitLayout />} />
 			</Routes>

@@ -35,4 +35,11 @@ public class OrderController {
     public ResponseEntity<Order> createOrder(@RequestBody Order newOrder) {
         return new ResponseEntity<Order>(service.addOrder(newOrder), HttpStatus.CREATED);
     }
+
+    @DeleteMapping("/{email}")
+    public String deleteElement(@PathVariable String email) {
+        Optional<Order> order = service.singleOrder(email);
+        service.deleteOrder(order.get().getId());
+        return "deleted";
+    }
 }

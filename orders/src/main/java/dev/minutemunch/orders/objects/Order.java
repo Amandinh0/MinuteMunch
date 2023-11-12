@@ -19,6 +19,10 @@ public class Order {
     @Id
     private ObjectId id;
 
+    public ObjectId getId() {
+        return id;
+    }
+
     private Location location;
 
     public Location getLocation() {

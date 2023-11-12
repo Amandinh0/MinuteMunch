@@ -1,5 +1,6 @@
 package dev.minutemunch.orders.objects;
 
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -35,5 +36,11 @@ class OrderService {
 
         return savedOrder;
     }
+
+    public String deleteOrder(ObjectId id) {
+        repository.deleteById(id);
+        return "deleted";
+    }
+
 
 }

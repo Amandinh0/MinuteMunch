@@ -49,3 +49,25 @@
   .grid-button:hover {
     background-color: #2980b9; /* Hover color */
   }
+
+  .popup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70;
+    height: 100vh;
+    background-color: rgba(0,0,0,0,0.2);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.inner-popup{
+    position: relative;
+    padding: 32px;
+    width: 100%;
+    background-color: #FFF;
+
+}

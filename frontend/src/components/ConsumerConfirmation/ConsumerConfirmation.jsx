@@ -128,50 +128,48 @@ function ConsumerConfirmation({post}){
         
         if(residenceArea === "Sylvan"|| residenceArea === "Northeast"||residenceArea==="NorthRes"){
             if(hall === "\"Berkshire\"" || hall=== "\"Hampshire\""){
-                cost = 6; 
+                cost = 6.32; 
             }
             else if(hall === "\"Worcester\""){
-                cost = 3;
+                cost = 3.75;
             }
             else{
-                cost = 4;
+                cost = 4.91;
             }
         }
         else if(residenceArea ==="Southwest"){
             if(hall === "\"Berkshire\"" || hall === "\"Hampshire\""){
-                cost = 3; 
+                cost = 3.01; 
             }
             else if(hall === "\"Worcester\""){
-                cost = 6;
+                cost = 6.23;
             }
             else{
-                cost = 5;
+                cost = 5.56;
             }
         }
         else if(residenceArea === "OHill"||residenceArea === "Central"){
             if(hall === "\"Berkshire\"" || hall === "\"Hampshire\""){
-                cost = 5; 
+                cost = 5.12; 
             }
             else if(hall === "\"Worcester\""){
-                cost = 4;
+                cost = 4.90;
             }
             else{
-                cost = 3;
+                cost = 3.23;
             }
         }
         else{
             if(hall === "\"Berkshire\"" || hall === "\"Hampshire\"" || hall === "\"Worcester\""){
-                cost = 4; 
+                cost = 4.39; 
             }
             else{
-                cost = 5;
+                cost = 5.32;
             }
         }
 
         
-        let addedNumber = Math.random(); 
-        cost = cost + addedNumber; 
-        cost = cost.toFixed(2);
+        
 
         const pushOrder = new Order(residenceArea,residenceHall, parsedFood, parsedDrink, 3, '4:00', cost, phoneNumber, email , name, hall); 
         //"Northeast", "Leach", ["asdlifj", "lfkdna"], ["dasilfnd"], 3 , "4:00", 6.77, "030-933-0320", "TEST@umass.edu", "lfadksjf", "WOOO"

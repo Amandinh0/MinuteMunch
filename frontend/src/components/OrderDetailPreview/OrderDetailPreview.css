@@ -1,39 +1,71 @@
-html {
-	height: 100%;
-	width: 100%;
-	margin: 0;
-	padding: 0;
+* {
 	box-sizing: border-box;
-	background-color: #ebe2c4;
+}
+
+body {
+	background-color: #ebe2c4; /* Moved from html */
+	color: #ebe2c4;
+	position: fixed;
+	overflow-y: scroll;
 }
 
 .container {
-	width: 100vw;
-	height: 100vh;
+	min-height: 94%;
+	min-width: 100%;
+	padding: 0px; /* Adjusted for internal spacing */
 	background-color: #ebe2c4;
 }
 
-h2 {
-	color: #333;
+* {
+	box-sizing: border-box;
 }
 
-h1 {
-	color: #0a0000;
+body {
+	background-color: #ebe2c4; /* Moved from html */
+	color: #ebe2c4;
+	position: fixed;
+	overflow-y: scroll;
+}
+
+.container {
+	height: 70%;
+	min-width: auto;
+	padding: 10px; /* Adjusted for internal spacing */
+	background-color: #ebe2c4;
 }
 
 table {
-	width: 100%;
-	border-collapse: collapse;
-	margin-top: 20px;
-	border: 3px #0a0000 solid;
+	width: 80%; /* Adjusted width */
+	margin: 20px auto; /* Centered table */
+	border: 2px solid;
 }
 
 th,
 td {
-	border: 3px solid #0a0000;
-	padding: 20px;
+	padding: 10px; /* Adjusted padding */
 	text-align: left;
 	background-color: #ebe2c4;
+	border: 1px dotted;
+}
+
+.total {
+	margin-top: 0;
+	text-align: right;
+}
+
+.accept-button,
+.reject-button {
+	padding: 10px 14px;
+	margin: 20px 40px 20px 10px; /* Adjusted margins */
+	background-color: #99ff99; /* For accept */
+}
+
+.reject-button {
+	background-color: #ff704d; /* For reject */
+}
+
+h3 {
+	font-size: 30px; /* Added units */
 }
 
 .total {
@@ -41,28 +73,27 @@ td {
 	text-align: right;
 }
 
-.accept-button {
-	position: relative;
-	margin-top: 30px;
-	left: 10px;
-	padding: 20px 14px;
-	margin-bottom: -30px;
-	margin-right: 40px;
-	background-color: #99ff99;
+.accept-button,
+.reject-button {
+	padding: 10px 14px;
+	margin: 20px 40px 20px 10px; /* Adjusted margins */
+	background-color: #99ff99; /* For accept */
 }
 
 .reject-button {
-	position: relative;
-	margin-top: 30px;
-	left: 10px;
-	padding: 20px 14px;
-	margin-bottom: -30px;
-	margin-right: 40px;
-	background-color: #ff704d;
+	background-color: #ff704d; /* For reject */
 }
 
 h3 {
-	color: green;
-	font-size: 30;
-	font-weight: bold;
+	font-size: 30px; /* Added units */
+}
+
+.munchpic {
+	display: absolute;
+	float: left;
+}
+
+.munchdiv {
+	display:absolute;
+	float: left;
 }

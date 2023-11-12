@@ -1,5 +1,4 @@
 import React from "react";
-import {useNavigate} from "react-router-dom";
 import "./OrderDetail.css";
 import globalVariables from './globalVariables';
 
@@ -54,7 +53,7 @@ export default function OrderDetail()
                 <thead>
                 <tr>
                     <th>Name</th>
-                    <td>Aman</td>
+                    <td>{sharedVariable}</td>
                 </tr>
                 </thead>
                 <tbody>
@@ -72,7 +71,7 @@ export default function OrderDetail()
                 </tr>
                 <tr>
                     <th>QR Code</th>
-                    <td><img src="./QRCODE.jpg"></img></td>
+                    <td><img src="QRCODE.jpg" alt="HELLO"></img></td>
                 </tr>
                 </tbody>
             </table>

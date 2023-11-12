@@ -1,0 +1,68 @@
+html {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	background-color: #ebe2c4;
+}
+
+.container {
+	width: 100vw;
+	height: 100vh;
+	background-color: #ebe2c4;
+}
+
+h2 {
+	color: #333;
+}
+
+h1 {
+	color: #0a0000;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 20px;
+	border: 3px #0a0000 solid;
+}
+
+th,
+td {
+	border: 3px solid #0a0000;
+	padding: 20px;
+	text-align: left;
+	background-color: #ebe2c4;
+}
+
+.total {
+	margin-top: 20px;
+	text-align: right;
+}
+
+.accept-button {
+	position: relative;
+	margin-top: 30px;
+	left: 10px;
+	padding: 20px 14px;
+	margin-bottom: -30px;
+	margin-right: 40px;
+	background-color: #99ff99;
+}
+
+.reject-button {
+	position: relative;
+	margin-top: 30px;
+	left: 10px;
+	padding: 20px 14px;
+	margin-bottom: -30px;
+	margin-right: 40px;
+	background-color: #ff704d;
+}
+
+h3 {
+	color: green;
+	font-size: 30;
+	font-weight: bold;
+}

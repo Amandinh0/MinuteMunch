@@ -1,13 +1,23 @@
-import Modal from "./Modal";
+import React, { useState } from "react";
+import "./styles.css";
+import {useNavigate} from "react-router-dom";
 
-function OrderListItem() {
+export default function OrderListItem({order, itemClicked}) {
+
+  const navigate = useNavigate();
+
+  const OrderDetailNavigate = () => {
+    navigate('/driverHome/driverPage/driverOrderPreview');
+    itemClicked(order);
+  }
+
   return (
     <>
-      <Modal />
-      <Modal />
+      <div className="button-grid">
+      <button onClick={OrderDetailNavigate} className="btn-modal">
+        View Order
+      </button>
+      </div>
     </>
-  ) 
-  
+  );
 }
-
-export default OrderListItem;

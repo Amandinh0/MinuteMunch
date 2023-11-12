@@ -20,6 +20,11 @@ import DriverPage from "./components/DriverPage/DriverPage";
 
 function App() {
 
+  const [passsList, setPassList] = useState([]);
+  const [authRequest, setRequest] = useState(false);
+  const [auth, setAuth] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [ordersList, setOrders] = useState([]);
   const [postOrder, setPostOrder] = useState(null);
   const [currentOrder, setCurrentOrder] = useState(null);
@@ -52,13 +57,20 @@ function App() {
     }
   };
 
-  const getPassword = async email => {
+  const getPasswords = async email => {
     try {
-      const response = await OrdersAPI.getUserPassword(email);
+      let passLister = [];
+      passLister[0] = await OrdersAPI.getUserPassword("afairbanks@umass.edu");
+      passLister[1] = await OrdersAPI.getUserPassword("samuelnewman@umass.edu");
+      passLister[2] = await OrdersAPI.getUserPassword("irapko@umass.edu");
+      passLister[3] = await OrdersAPI.getUserPassword("skale@umass.edu");
+      passLister[4] = await OrdersAPI.getUserPassword("amanchhetri@umass.edu");
+      console.log(passLister);
+      setPassList(passLister);
     } catch (err) {
       console.log(err);
     }
-  }
+  };
 
   const postOrders = async order => {
     try {
@@ -71,6 +83,7 @@ function App() {
 
   useEffect(() => {
     fetchOrders();
+    getPasswords(email)
   }, [changeOrder]); //refresh when root back to home
 
   useEffect(() => {
@@ -89,15 +102,26 @@ function App() {
     }
   }, [deletedOrder]);
 
-  
+  useEffect(() => {
+    let loop = 0;
+    while (loop < 5) {
+      console.log(passsList[loop]);
+        if (password == passsList[loop]) {
+            loop = 5;
+            setAuth(true);
+        }
+        loop += 1;
+    }
+  }, [authRequest]);
+
 
 	return (
 		<Router>
 			<Routes>
         <Route path="/consumerHome/confirmation/checkout" element={<Checkout />} />
 				<Route path="/consumerHome/confirmation" element={<ConsumerConfirmation post={setPostOrder} />} />
-				<Route path="/consumerHome" element={<ConsumerLayout />} />
-				<Route path="/driverHome" element={<DriverLayout />} />
+				<Route path="/consumerHome" element={<ConsumerLayout passList={passsList} setReq={setRequest} setEmailStr={setEmail} setPassStr={setPassword}/>} />
+				<Route path="/driverHome" element={<DriverLayout passList={passsList} setReq={setRequest} setEmailStr={setEmail} setPassStr={setPassword} />} />
 				<Route path="/driverHome/driverPage" element={<DriverPage orderList={ordersList} onClickPage={setCurrentOrder} />} />
         <Route path="/driverHome/driverPage/driverOrderPreview" element={<OrderDetailPreview order={currentOrder} onClickItem={setDeleteOrder}/>} />
         <Route path="/driverHome/driverPage/driverOrderPreview/driverOrder" element={<OrderDetail order={currentOrder} onClickItem={setChangeOrder}/>} />

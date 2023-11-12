@@ -48,13 +48,7 @@ body {
 		width: 80%; /* Adjust width for mobile view */
 		margin-bottom: 4vh; /* Add space between items */
 	}
-
-	.submit-button {
-		width: 80%; /* Adjust width for mobile view */
-		position: static; /* Reset position for mobile */
-		margin-top: 4vh; /* Add space above buttons */
-	}
-
+	
 	.button-grid {
 		gap: 5vw; /* Adjust gap for mobile view */
 	}
@@ -72,7 +66,8 @@ li {
 	display: flex;
 	position: absolute;
 	width: 20%;
-	height: 100%;
+	height: 10%;
+	bottom: 0%;
 	justify-content: center;
 	align-items: flex-end;
 	padding-bottom: 10vh;

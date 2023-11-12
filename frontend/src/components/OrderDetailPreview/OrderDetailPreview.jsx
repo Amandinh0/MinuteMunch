@@ -9,18 +9,15 @@ function OrderDetailPreview({ order, onClickItem }) {
 	const progressVariable = globalVariables.progressVariable;
 	const navigate = useNavigate();
 	function RouteHome() {
-		navigate("/driverHome/driverPage/driverOrderPreview/driverOrder");
+		navigate("/");
 	}
 	function RouteBack() {
 		navigate("/driverHome/driverPage");
 	}
 
-	function RouteHome() {
+	function RouteNext() {
 		onClickItem(order);
 		navigate("/driverHome/driverPage/driverOrderPreview/driverOrder");
-	}
-	function RouteBack() {
-		navigate("/driverHome/driverPage");
 	}
 
 	return (
@@ -33,17 +30,15 @@ function OrderDetailPreview({ order, onClickItem }) {
 				></meta>
 				<title>Order Detail</title>
 			</head>
-			<body>
-				<header>
-					<h1>Order Detail Preview</h1>
-					<img
-						src="/logo.png"
-						alt="logo"
-						className="munchpic"
-						onClick={RouteHome}
-					/>
-				</header>
-
+			<body style={{ backgroundColor: "#EBE2C4" }}>
+			<div className='munchdiv'>
+				<img
+					src="/logo.png"
+					alt="logo"
+					className="munchpic"
+					onClick={RouteHome}
+				/>
+			</div>
 				<div class="container">
 					{/* <h2>Entree</h2> */}
 
@@ -116,12 +111,7 @@ function OrderDetailPreview({ order, onClickItem }) {
 					</table>
 
 					<div class="total">
-						<h3 class="money">{order.payout}</h3>
-					</div>
-				</div>
-				<div>
-					<div class="total">
-						<h3 class="money">$10.00</h3>
+						<h3 class="money">${order.payout}</h3>
 					</div>
 				</div>
 			</body>

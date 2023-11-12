@@ -3,7 +3,7 @@ import OrderList from "../OrderList/OrderList";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function DriverPage({orderList, onClickPage}) {
+function DriverPage({ orderList, onClickPage }) {
 	const navigate = useNavigate();
 
 	function RouteHome() {
@@ -11,16 +11,21 @@ function DriverPage({orderList, onClickPage}) {
 	}
 	return (
 		<>
-			<div>
+			<div
+				class="containers"
+				style={{ height: "100vh", backgroundColor: "#ebe2c4" }}
+			>
 				<h1>Pending Orders:</h1>
-                <OrderList orderList={orderList} onClickItem={onClickPage}/>
+				<div className="button-grid">
+					<OrderList orderList={orderList} onClickItem={onClickPage} />
+				</div>
+				<img
+					src="/logo.png"
+					alt="logo"
+					className="munchpic"
+					onClick={RouteHome}
+				/>
 			</div>
-			<img
-				src="/logo.png"
-				alt="logo"
-				className="munchpic"
-				onClick={RouteHome}
-			/>
 		</>
 	);
 }

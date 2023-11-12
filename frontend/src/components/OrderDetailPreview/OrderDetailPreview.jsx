@@ -115,8 +115,9 @@ function OrderDetailPreview({order, onClickItem}) {
 				<div class="total">
 					<h3 class="money">$10.00</h3>
 				</div>
-			</div>
-		</html>
+			  </div>
+			  </body>
+	  </html>
 	);
 }
 

@@ -7,7 +7,7 @@ body {
 
   header {
     background-color: #ebe2c4;
-    color: #fff;
+    color: #050000;
     padding: 10px;
     text-align: center;
     margin: 15px;
@@ -35,10 +35,11 @@ body {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    border: 3px #0a0000 solid;
   }
 
   th, td {
-    border: 3px solid #0c0000;
+    border: 3px solid #0a0000;
     padding: 20px;
     text-align: left;
     background-color: #f2f2f2;

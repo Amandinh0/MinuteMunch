@@ -48,10 +48,7 @@ body {
 		width: 80%; /* Adjust width for mobile view */
 		margin-bottom: 4vh; /* Add space between items */
 	}
-
-	.submit-button {
-	}
-
+	
 	.button-grid {
 		gap: 5vw; /* Adjust gap for mobile view */
 	}

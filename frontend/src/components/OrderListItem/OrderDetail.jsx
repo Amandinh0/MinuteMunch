@@ -2,7 +2,7 @@ import React from "react";
 import "./OrderDetail.css";
 import globalVariables from './globalVariables';
 
-export default function OrderDetail() 
+export default function OrderDetail()
 {
 
     const sharedVariable = globalVariables.sharedVariable;

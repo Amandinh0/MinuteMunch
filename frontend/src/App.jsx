@@ -12,6 +12,7 @@ import { React, useEffect, useState} from "react";
 import OrdersAPI from "./api/orders";
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Order from "./order";
 
 
 function App() {
@@ -55,7 +56,9 @@ function App() {
   }, []);
 
   useEffect(() => {
-    fetchSingleOrder();    
+    //fetchSingleOrder();    
+    const backdkd = new Order("Northeast", "Leach", ["asdlifj", "lfkdna"], ["dasilfnd"], 3 , "4:00", 6.77, "030-933-0320", "FADSLKJD@umass.edu", "lfadksjf", "WOOO");
+    postOrders(backdkd.state);
   }, []);
 
   

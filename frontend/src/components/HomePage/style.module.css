@@ -31,34 +31,11 @@ section div:hover {
 	object-fit: contain;
 }
 
-/*
-div button {
-	border: 2px solid white; Or any color that contrasts with the background 
-	background-color: rgba(0, 0, 0, 0.5); /* Slightly transparent black 
-	color: #fff;
-	padding: 10px 20px;
-	font-size: 20px;
-	font-family: "Inter";
-	font-weight: 700;
-	cursor: pointer; /* 
-	transition: all 0.25s ease-in-out;
-} 
-*/
-
 div button:hover {
 	color: rgb(255, 35, 35);
 	font-size: 74px;
 	transition: all 0.25s ease-in-out;
 }
-
-/* div {
-	filter: blur(5px);
-}
-
-div:hover {
-	filter: none;
-	transition: all 0.25s ease-in-out;
-} */
 
 div button {
 	font-size: 36px;

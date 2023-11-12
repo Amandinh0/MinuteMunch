@@ -1,39 +1,12 @@
-/* Add this to your CSS file or style block */
-
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #EBE2C4;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .container {
-    max-width: 800px;
-    margin: 20px auto;
-    background-color: #EBE2C4;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  h1 {
-    color: #333;
-  }
-  
-  h2 {
+  .helloh2 {
     color: #555;
   }
   
-  h3 {
+  .helloh3 {
     color: #777;
   }
   
-  label {
-    display: block;
-    margin: 10px 0;
-  }
-  
-  input {
+  /* input {
     width: 100%;
     padding: 8px;
     margin-top: 4px;
@@ -59,29 +32,33 @@ body {
   
   button:hover {
     background-color: #45a049;
-  }
+  }*/
   
-  ul {
+  .ulul {
     list-style-type: none;
     padding: 0;
+  } 
+
+  .lil12 {
+    margin: 20px;
   }
   
-  .labels {
+  .labels123 {
     display: block;
     font-size: 18px;
     margin-bottom: 10px;
     color: #333;
   }
 
-  li {
-    margin-bottom: 5px;
-  }
-
-  h1 {
+  .helloh1 {
     font-family: sans-serif;
     font-size: 2em;
     color: #333;
     text-align: center;
     margin-top: 20px;
     font-weight: bold;
+  }
+
+  .willfill {
+    background: #b30f0f;
   }

@@ -4,9 +4,9 @@ import { useNavigate } from "react-router-dom";
 
 function DiningPopUp(props) {
 	const [breakfastItem, setbreakfastItem] = useState([]);
-	const[lunchitem, setlunchitem] = useState([]);
+	const[lunchItem, setlunchItem] = useState([]);
 	const [drinkItem, setdrinkItem] = useState("");
-	const hallName = props.hallName;
+	//const hallName = props.hallName;
 	const navigate = useNavigate();
 
 	const handleBreakfastChange = (item) => {
@@ -24,13 +24,14 @@ function DiningPopUp(props) {
 	};
 
 	const handleLunchChange = (item) => {
-		if (lunchitem.includes(item)) {
+		console.log("Current lunchItem:", lunchItem);
+		if (lunchItem.includes(item)) {
 			// If item is already selected, remove it
-			setlunchitem(lunchitem.filter((selectedItem) => selectedItem !== item));
+			setlunchItem(lunchItem.filter((selectedItem) => selectedItem !== item));
 		} else {
 			// If item is not selected and the maximum selection limit is not reached, add it
-			if (lunchitem.length < 3) {
-				setlunchitem([...lunchitem, item]);
+			if (lunchItem.length < 3) {
+				setlunchItem([...lunchItem, item]);
 			}
 		}
 	};
@@ -45,17 +46,20 @@ function DiningPopUp(props) {
 		if (breakfastItem.length > 0) {
 			list = breakfastItem;
 		} else {
-			list = lunchitem;
+			list = lunchItem;
 		}
+
+		console.log("this is my hallName", props.hallName);
+
 		navigate("/consumerHome/confirmation", {
 			state: {
 				food: JSON.stringify(list),
 				drink: JSON.stringify(drinkItem),
-				hall: JSON.stringify(hallName),
+				hall: props.hallName,
 			},
 		});
 	}
-
+	
 	return props.trigger ? (
 		<div className="popup">
 			<div className="popup-inner">
@@ -88,7 +92,7 @@ function DiningPopUp(props) {
 								<label>
 									<input
 										type="checkbox"
-										checked={lunchitem.includes(item)}
+										checked={lunchItem.includes(item)}
 										onChange={() => handleLunchChange(item)}
 									/>
 									{item}

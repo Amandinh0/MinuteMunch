@@ -1,4 +1,4 @@
-body {
+.bodybody1 {
     font-family: 'Arial', sans-serif;
     background-color: #f7f7f7;
     margin: 0;
@@ -9,7 +9,7 @@ body {
     height: 100vh;
     }
 
-    .container {
+    .container12 {
     text-align: center;
     background-color: #fff;
     padding: 20px;
@@ -17,25 +17,25 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
-    h1 {
-    color: #881c1c; /* UMass Maroon Color */
+    .h1h1h1 {
+    color: #881c1c;  
     }
 
-    p {
+    .p1p1p1 {
     font-size: 18px;
     color: #333;
     margin-bottom: 20px;
     }
 
-    img {
+    .imgimg {
     width: 150px;
     margin-bottom: 20px;
     }
 
-    a {
+    .aaaa {
         display: inline-block;
         padding: 10px 20px;
-        background-color: #881c1c; /* UMass Maroon Color */
+        background-color: #881c1c;  
         color: #fff;
         text-decoration: none;
         border-radius: 5px;
@@ -43,5 +43,5 @@ body {
     }
 
     a:hover {
-        background-color: #680e0e; /* Darker Maroon on hover */
-    }
+        background-color: #680e0e; 
+    } 

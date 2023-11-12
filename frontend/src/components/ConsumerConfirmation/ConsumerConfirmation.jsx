@@ -3,7 +3,7 @@ import OrdersAPI from "../../api/orders";
 import { useState, useEffect } from "react";
 import Order from "../../order";
 import Housing from "../data/locations.json";
-import "./ConsumerConfirmation.css";
+import "./jahja1234.css";
 
 
 
@@ -46,9 +46,8 @@ function ConsumerConfirmation({post}){
 
     const parsedFood = JSON.parse(food);
     const parsedDrink = JSON.parse(drink); 
-    const parsedHall = JSON.parse(hall);
+    const parsedHall = hall;
 
-    const payout = 0.33
 
     const postOrder = e => {
         e.preventDefault();
@@ -125,13 +124,14 @@ function ConsumerConfirmation({post}){
             case "Webster":
                 residenceArea = "OHill";
                 break;
+            
         }
         
         if(residenceArea === "Sylvan"|| residenceArea === "Northeast"||residenceArea==="NorthRes"){
-            if(hall === "\"Berkshire\"" || hall=== "\"Hampshire\""){
+            if(hall === "Berkshire" || hall=== "Hampshire"){
                 cost = 6.32; 
             }
-            else if(hall === "\"Worcester\""){
+            else if(hall === "Worcester"){
                 cost = 3.75;
             }
             else{
@@ -139,10 +139,10 @@ function ConsumerConfirmation({post}){
             }
         }
         else if(residenceArea ==="Southwest"){
-            if(hall === "\"Berkshire\"" || hall === "\"Hampshire\""){
+            if(hall === "Berkshire" || hall === "Hampshire"){
                 cost = 3.01; 
             }
-            else if(hall === "\"Worcester\""){
+            else if(hall === "Worcester"){
                 cost = 6.23;
             }
             else{
@@ -150,10 +150,10 @@ function ConsumerConfirmation({post}){
             }
         }
         else if(residenceArea === "OHill"||residenceArea === "Central"){
-            if(hall === "\"Berkshire\"" || hall === "\"Hampshire\""){
+            if(hall === "Berkshire" || hall === "Hampshire"){
                 cost = 5.12; 
             }
-            else if(hall === "\"Worcester\""){
+            else if(hall === "Worcester"){
                 cost = 4.90;
             }
             else{
@@ -161,7 +161,7 @@ function ConsumerConfirmation({post}){
             }
         }
         else{
-            if(hall === "\"Berkshire\"" || hall === "\"Hampshire\"" || hall === "\"Worcester\""){
+            if(hall === "Berkshire" || hall === "Hampshire" || hall === "Worcester"){
                 cost = 4.39; 
             }
             else{
@@ -182,36 +182,37 @@ function ConsumerConfirmation({post}){
     }
 
     return (
+      <body>
       <div>
-        <h1>Confirmation Page</h1>
+        <h1 className="helloh1">Confirmation Page</h1>
         {parsedFood.length > 0 && (
           <div>
-            <h3>From {parsedHall}</h3>
-            <h2>Food items:</h2>
-            <ul>
+            <h3 className="helloh3">From {parsedHall}</h3>
+            <h2 className="helloh2">Food items:</h2>
+            <ul className="ulul">
               {parsedFood.map((item, index) => (
-                <li key={index}>{item}</li>
+                <li className="lil12" key={index}>{item}</li>
               ))}
             </ul>
           </div>
         )}
         <div>
           <h2>Drink</h2>
-          <ul>{parsedDrink}</ul>
+          <ul className="ulul">{parsedDrink}</ul>
         </div>
 
-        <div className="labels">
-        <label>
+        <div className="labels123">
+        <label className="labels123">
           Name:
           <input type="text" value={name} onChange={handleName} />
         </label>
         <br></br>
-        <label>
+        <label className="labels123">
           Phone Number:
           <input type="text" value={phoneNumber} onChange={handleNumber} />
         </label>
         <br></br>
-        <label>
+        <label className="labels123">
           Umass Email:
           <input type="text" value={email} onChange={handleEmail} />
         </label>
@@ -240,7 +241,7 @@ function ConsumerConfirmation({post}){
         <br></br>
         <button onClick={postOrder}>Order</button> */}
       </div>
-
+      </body>
     );
 }
 

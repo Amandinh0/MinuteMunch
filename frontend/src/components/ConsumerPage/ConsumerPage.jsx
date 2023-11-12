@@ -5,7 +5,7 @@ import DiningPopUp from "./DiningPopUp";
 function ConsumerPage() {
 	const [buttonPopup, setbuttonPopup] = useState(false);
 	const [hallName, sethallName] = useState(null);
-	const [hallString, setHallString] = useState("");
+	const [hallString, setHallString] = useState(null);
 
 	const wooClicked = () => {
 		// <DiningPopUp hallName={foodMenus.Worcester} drinks={foodMenus.Drinks}/>

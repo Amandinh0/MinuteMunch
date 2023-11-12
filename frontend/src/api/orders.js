@@ -29,6 +29,12 @@ class OrdersAPI {
         console.log(response.data);
         return response.data;
     }
+
+    static async getUserPassword(email) {
+        const response = await axios.get(`${BASE_ROOT}/api/users/${email}`)
+        console.log(response.data)
+        return response.data
+    }
 }
 
 export default OrdersAPI;

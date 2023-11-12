@@ -73,10 +73,14 @@ h3 {
 	text-align: right;
 }
 
-.accept-button,
 .reject-button {
 	padding: 10px 14px;
 	margin: 20px 40px 20px 10px; /* Adjusted margins */
+	background-color: #99ff99; /* For accept */
+}
+.accept-button {
+	padding: 10px 14px;
+	margin: 200px 40px 20px 10px; /* Adjusted margins */
 	background-color: #99ff99; /* For accept */
 }
 
@@ -96,4 +100,9 @@ h3 {
 .munchdiv {
 	display:absolute;
 	float: left;
+}
+
+.zzzzz{
+	display: flex;
+	justify-content: space-between;
 }

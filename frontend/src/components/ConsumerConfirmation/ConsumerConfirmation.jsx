@@ -132,6 +132,7 @@ function ConsumerConfirmation({ post }) {
             else{
                 cost = 4.53;
             }
+          }
         }
         else if(residenceArea ==="Southwest"){
             if(hall === "Berkshire" || hall === "Hampshire"){
@@ -177,7 +178,6 @@ function ConsumerConfirmation({ post }) {
 	};
 
     return (
-      <body>
       <div>
         <h1 className="helloh1">Confirmation Page</h1>
         {parsedFood.length > 0 && (

@@ -71,8 +71,9 @@ function OrderDetailPreview({ order, onClickItem }) {
             </tbody>
             </table>
 
-            <div>
-              <button onClick={RouteHome} className="accept-button">Accept Order</button><button onClick={RouteBack} className="reject-button">Reject Order</button>
+            <div className="zzzzz">
+              <button onClick={RouteNext} className="accept-button">Accept Order</button>
+              <button onClick={RouteBack} className="reject-button">Reject Order</button>
             </div>
 
 					<div class="total">

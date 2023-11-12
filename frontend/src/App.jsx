@@ -13,6 +13,7 @@ import OrdersAPI from "./api/orders";
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Order from "./order";
+import Checkout from "./components/ConsumerConfirmation/Checkout";
 
 
 function App() {
@@ -74,6 +75,7 @@ function App() {
 	return (
 		<Router>
 			<Routes>
+        <Route path="/consumerHome/confirmation/checkout" element={<Checkout />} />
 				<Route path="/consumerHome/confirmation" element={<ConsumerConfirmation />} />
 				<Route path="/consumerHome" element={<ConsumerLayout />} />
 				<Route path="/driverHome" element={<DriverLayout />} />

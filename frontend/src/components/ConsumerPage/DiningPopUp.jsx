@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 function DiningPopUp(props) {
 	const [breakfastItem, setbreakfastItem] = useState([]);
-	const [lunchItem, setlunchItem] = useState([]);
+	const[lunchItem, setlunchItem] = useState([]);
 	const [drinkItem, setdrinkItem] = useState("");
 	//const hallName = props.hallName;
 	const navigate = useNavigate();
@@ -24,6 +24,7 @@ function DiningPopUp(props) {
 	};
 
 	const handleLunchChange = (item) => {
+		console.log("Current lunchItem:", lunchItem);
 		if (lunchItem.includes(item)) {
 			// If item is already selected, remove it
 			setlunchItem(lunchItem.filter((selectedItem) => selectedItem !== item));
@@ -47,6 +48,9 @@ function DiningPopUp(props) {
 		} else {
 			list = lunchItem;
 		}
+
+		console.log("this is my hallName", props.hallName);
+
 		navigate("/consumerHome/confirmation", {
 			state: {
 				food: JSON.stringify(list),
@@ -55,7 +59,7 @@ function DiningPopUp(props) {
 			},
 		});
 	}
-
+	
 	return props.trigger ? (
 		<div className="popup">
 			<div className="popup-inner">

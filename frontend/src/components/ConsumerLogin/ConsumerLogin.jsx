@@ -99,7 +99,7 @@ const ConsumerLayout = ({setEmailStr, setPassStr, setReq, passList}) => {
 					content={
 						<>
 							<form className="LoginBox">
-								<b>Driver Login</b>
+								<b>Consumer Login</b>
 								<div className="spacer"></div>
 								<div className="spacer"></div>
 								<div className="spacer"></div>

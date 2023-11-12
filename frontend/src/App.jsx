@@ -120,7 +120,7 @@ function App() {
 			<Routes>
         <Route path="/consumerHome/confirmation/checkout" element={<Checkout />} />
 				<Route path="/consumerHome/confirmation" element={<ConsumerConfirmation post={setPostOrder} />} />
-				<Route path="/consumerHome" element={<ConsumerLayout passList={passsList} setReq={setRequest} setEmailStr={setEmail} setPassStr={setPassword}/>} />
+				<Route path="/consumerHome" element={<ConsumerLayout />} />
 				<Route path="/driverHome" element={<DriverLayout passList={passsList} setReq={setRequest} setEmailStr={setEmail} setPassStr={setPassword} />} />
 				<Route path="/driverHome/driverPage" element={<DriverPage orderList={ordersList} onClickPage={setCurrentOrder} />} />
         <Route path="/driverHome/driverPage/driverOrderPreview" element={<OrderDetailPreview order={currentOrder} onClickItem={setDeleteOrder}/>} />

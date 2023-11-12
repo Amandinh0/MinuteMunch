@@ -69,3 +69,18 @@ body {
 	justify-content: center;
 	align-items: center;
 }
+
+.pay {
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 800;
+}
+
+.items-swipes {
+  font-size: x-large;
+  font-weight: 700;
+}
+
+.locations {
+  font-size: large;
+  font-weight: 600;
+}

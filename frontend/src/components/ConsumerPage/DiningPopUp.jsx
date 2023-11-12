@@ -6,7 +6,7 @@ function DiningPopUp(props) {
 	const [breakfastItem, setbreakfastItem] = useState([]);
 	const [lunchItem, setlunchItem] = useState([]);
 	const [drinkItem, setdrinkItem] = useState("");
-	const hallName = props.hallName;
+	//const hallName = props.hallName;
 	const navigate = useNavigate();
 
 	const handleBreakfastChange = (item) => {
@@ -51,7 +51,7 @@ function DiningPopUp(props) {
 			state: {
 				food: JSON.stringify(list),
 				drink: JSON.stringify(drinkItem),
-				hall: JSON.stringify(hallName),
+				hall: props.hallName,
 			},
 		});
 	}

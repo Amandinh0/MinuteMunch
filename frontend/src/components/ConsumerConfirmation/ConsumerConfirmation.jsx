@@ -45,7 +45,7 @@ function ConsumerConfirmation({post}){
 
     const parsedFood = JSON.parse(food);
     const parsedDrink = JSON.parse(drink); 
-    const parsedHall = JSON.parse(hall);
+    const parsedHall = hall;
 
     const payout = 0.33
 

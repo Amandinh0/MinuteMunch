@@ -1,82 +1,3 @@
-// import React, { useState } from "react";
-// import { useNavigate } from "react-router-dom";
-// import Popup from "../LoginForm/Loginform";
-// import "../LoginForm/style.css";
-// import { Button, Alert } from "react-bootstrap";
-// import "bootstrap/dist/css/bootstrap.min.css";
-
-// const ConsumerLayout = () => {
-// 	const navigate = useNavigate();
-
-// 	function RouteHome() {
-// 		navigate("/");
-// 	}
-
-// 	function RouteNext() {
-// 		navigate("/consumerHome/consumerPage");
-// 	}
-
-// 	const [isOpen, setIsOpen] = useState(false);
-
-// 	const togglePopup = () => {
-// 		setIsOpen(!isOpen);
-// 	};
-
-// 	return (
-// 		<div
-// 			style={{
-// 				backgroundColor: "#570000",
-// 				height: "100vh",
-// 				position: "relative",
-// 			}}
-// 		>
-// 			\
-// 			<div className="screen">
-// 				<button
-// 					className="preLogin"
-// 					value="Click to Login"
-// 					onClick={togglePopup}
-// 				>
-// 					Login
-// 				</button>
-// 			</div>
-// 			<img
-// 				src="/whitelogo.png"
-// 				alt="logo"
-// 				className="munchpic"
-// 				onClick={RouteHome}
-// 			/>
-// 			<div className="background-image">
-// 				<img
-// 					src="/wave-abstract-lines-background-free-png-removebg.png"
-// 					alt=""
-// 				/>
-// 			</div>
-// 			{isOpen && (
-// 				<Popup
-// 					content={
-// 						<>
-// 							<div classname="LoginBox">
-// 								<b>Driver Login</b>
-// 								<p>
-// 									<input type="text" className="username" name="user" />
-// 								</p>
-// 								<p>
-// 									<input type="text" className="password" name="pass" />
-// 								</p>
-// 								<Button onClick={RouteNext}>Login</Button>
-// 							</div>
-// 						</>
-// 					}
-// 					handleClose={togglePopup}
-// 				/>
-// 			)}
-// 		</div>
-// 	);
-// };
-
-// export default ConsumerLayout;
-
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Popup from "../LoginForm/Loginform";
@@ -151,17 +72,27 @@ const ConsumerLayout = () => {
 				<Popup
 					content={
 						<>
-							<div className="LoginBox">
+							<form className="LoginBox">
 								<b>Driver Login</b>
 								<div className="spacer"></div>
 								<div className="spacer"></div>
 								<div className="spacer"></div>
 								<div className="spacer"></div>
 								<p>
-									<input type="text" className="username" name="user" />
+									<input
+										type="text"
+										className="username"
+										name="email"
+										placeholder="Email"
+									/>
 								</p>
 								<p>
-									<input type="password" className="password" name="pass" />
+									<input
+										type="password"
+										className="password"
+										name="pass"
+										placeholder="Password"
+									/>
 								</p>
 								<div className="spacer"></div>
 								<div className="spacer"></div>
@@ -183,7 +114,7 @@ const ConsumerLayout = () => {
 										Login
 									</button>
 								</div>
-							</div>
+							</form>
 						</>
 					}
 					handleClose={togglePopup}

@@ -4,6 +4,7 @@ import Popup from "../LoginForm/Loginform";
 import "../LoginForm/style.css";
 import { Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const DriverLayout = () => {
 	const navigate = useNavigate();
@@ -88,8 +89,7 @@ const DriverLayout = () => {
 										placeholder="Password"
 									/>
 								</p>
-								<div className="spacer"></div>
-								<div className="spacer"></div>
+								<ReCAPTCHA sitekey={process.env.REACT_APP_SITE_KEY} />
 								<div className="spacer"></div>
 								<div className="spacer"></div>
 								<div className="spacer"></div>

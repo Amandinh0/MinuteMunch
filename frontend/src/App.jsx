@@ -52,6 +52,14 @@ function App() {
     }
   };
 
+  const getPassword = async email => {
+    try {
+      const response = await OrdersAPI.getUserPassword(email);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   useEffect(() => {
     fetchOrders();
   }, []);

@@ -46,16 +46,16 @@ div button {
 */
 
 div button:hover {
-	color: rgb(216, 14, 14);
+	color: rgb(255, 35, 35);
 	font-size: 74px;
 	transition: all 0.25s ease-in-out;
 }
 
 /* div {
 	filter: blur(5px);
-} */
+}
 
-/* div:hover {
+div:hover {
 	filter: none;
 	transition: all 0.25s ease-in-out;
 } */

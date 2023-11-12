@@ -1,14 +1,15 @@
 import OrderListItem from "../OrderListItem/OrderListItem";
+import OrderList from "../OrderList/OrderList";
 
-function Driver() {
+function DriverPage({orderList, onClickPage}) {
 	return (
 		<>
 			<div>
 				<h1>Pending Orders:</h1>
-                <OrderListItem />
+                <OrderList orderList={orderList} onClickItem={onClickPage}/>
 			</div>
 		</>
 	);
 }
 
-export default Driver;
+export default DriverPage;

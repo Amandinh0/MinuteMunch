@@ -8,6 +8,8 @@ function DiningPopUp(props){
 
     const [breakfastItem, setbreakfastItem] = useState([]);
     const [lunchItem, setlunchItem] = useState([]); 
+    const [drinkItem, setdrinkItem] = useState('');
+    const  hallName = props.hallName; 
     const navigate = useNavigate(); 
 
     const handleBreakfastChange = (item) => {
@@ -35,15 +37,27 @@ function DiningPopUp(props){
           }
       };
 
+      const handleDrink = (event) =>{
+        const selectedValue = event.target.value;
+        setdrinkItem(selectedValue); 
+      }
+
       function AfterSubmit() {
+        let list = null;
+        if (breakfastItem.length > 0) {
+          list = breakfastItem;
+        } else {
+          list = lunchItem;
+        } 
         navigate('/consumerHome/confirmation', {
           state: { 
-            breakfast: JSON.stringify(breakfastItem), 
-            lunch: JSON.stringify(lunchItem)
+            food: JSON.stringify(list), 
+            drink: JSON.stringify(drinkItem),
+            hall: JSON.stringify(hallName)
           }
         });
       }
-
+      
     return props.trigger ? (
       <div className="popup">
         <div className="popup-inner">
@@ -87,6 +101,20 @@ function DiningPopUp(props){
           </ul>
           ) : (
             <p>No Lunch items available.</p>
+          )} 
+
+        <h1>Drinks</h1>
+          {props.drink ? (
+            <select id="menu" value={drinkItem} onChange={handleDrink}>
+            <option value="">Select an drink</option>
+            {props.drink.map((item, index) => (
+              <option key={index} value={item}>
+                {item}
+              </option>
+            ))}
+          </select>
+          ) : (
+            <p>No Drinks Available</p>
           )} 
 
           

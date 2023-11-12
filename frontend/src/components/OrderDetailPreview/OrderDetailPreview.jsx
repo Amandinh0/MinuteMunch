@@ -3,8 +3,8 @@ import {useNavigate} from "react-router-dom";
 import "./OrderDetailPreview.css";
 import globalVariables from '../OrderListItem/globalVariables';
 
-function OrderDetailPreview() {
-
+function OrderDetailPreview({order}) {
+  console.log("from Detail", order)
   const sharedVariable = globalVariables.sharedVariable;
   const progressVariable = globalVariables.progressVariable;
 

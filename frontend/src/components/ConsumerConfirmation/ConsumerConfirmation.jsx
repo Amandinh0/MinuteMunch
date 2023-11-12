@@ -5,93 +5,86 @@ import Order from "../../order";
 import Housing from "../data/locations.json";
 import "./jahja1234.css";
 
+function ConsumerConfirmation({ post }) {
+	// const [currentOrder, setOrder] = useState();
 
+	// useEffect(() => {
+	//   if (currentOrder) {
+	//     postOrders(currentOrder.state);
+	//   }
+	// },[currentOrder])
 
-function ConsumerConfirmation({post}){
+	const [phoneNumber, setphoneNumber] = useState("");
+	const [residenceHall, setresidencehall] = useState("");
+	const [email, setemail] = useState("");
+	const [name, setname] = useState("");
 
-  // const [currentOrder, setOrder] = useState();
+	const handleNumber = (event) => {
+		setphoneNumber(event.target.value);
+	};
+	const handleHall = (event) => {
+		setresidencehall(event.target.value);
+	};
+	const handleEmail = (event) => {
+		setemail(event.target.value);
+	};
+	const handleName = (event) => {
+		setname(event.target.value);
+	};
 
-  // useEffect(() => {
-  //   if (currentOrder) {
-  //     postOrders(currentOrder.state);
-  //   }
-  // },[currentOrder])
+	const navigate = useNavigate();
 
-
-
-    const [phoneNumber, setphoneNumber] = useState(''); 
-    const [residenceHall, setresidencehall] = useState(''); 
-    const [email, setemail] = useState(''); 
-    const [name, setname] = useState('');
-
-    const handleNumber = (event) =>{
-        setphoneNumber(event.target.value); 
-    }
-    const handleHall = (event) =>{
-        setresidencehall(event.target.value); 
-    }
-    const handleEmail = (event) =>{
-        setemail(event.target.value); 
-    }
-    const handleName = (event) =>{
-        setname(event.target.value); 
-    }
-
-    const navigate = useNavigate(); 
-
-    
-
-    const location = useLocation();
-    const { food, drink, hall } = location.state;
+	const location = useLocation();
+	const { food, drink, hall } = location.state;
 
     const parsedFood = JSON.parse(food);
     const parsedDrink = JSON.parse(drink); 
     const parsedHall = hall;
 
 
-    const postOrder = e => {
-        e.preventDefault();
-        let residenceArea = null; 
-        let cost = 0; 
+	const postOrder = (e) => {
+		e.preventDefault();
+		let residenceArea = null;
+		let cost = 0;
 
-        switch(residenceHall){
-            case "Brown":
-            case "McNamara":
-            case "Cashin":
-                residenceArea = "Sylvan";
-                break; 
-            
-            case "Baker":
-            case "Brett":
-            case "Brooks":
-            case "Butterfield":
-            case "Chadbourne":
-            case "Gorman":
-            case "Greenough":
-            case "Wheeler":
-                residenceArea = "Central";
-                break; 
-            
-            case "Birch":
-            case "Elm":
-            case "Linden":
-            case "Maple":
-            case "OakHill":
-            case "Sycamore":
-                residenceArea = "Honors";
-                break; 
-            
-            case "Crabtree":
-            case "Dwight":
-            case "Hamlin":
-            case "Johnson":
-            case "Knowlton":
-            case "Leach":
-            case "Lewis":
-            case "MaryLyon":
-            case "Thatcher":
-                residenceArea = "Northeast";
-                break; 
+		switch (residenceHall) {
+			case "Brown":
+			case "McNamara":
+			case "Cashin":
+				residenceArea = "Sylvan";
+				break;
+
+			case "Baker":
+			case "Brett":
+			case "Brooks":
+			case "Butterfield":
+			case "Chadbourne":
+			case "Gorman":
+			case "Greenough":
+			case "Wheeler":
+				residenceArea = "Central";
+				break;
+
+			case "Birch":
+			case "Elm":
+			case "Linden":
+			case "Maple":
+			case "OakHill":
+			case "Sycamore":
+				residenceArea = "Honors";
+				break;
+
+			case "Crabtree":
+			case "Dwight":
+			case "Hamlin":
+			case "Johnson":
+			case "Knowlton":
+			case "Leach":
+			case "Lewis":
+			case "MaryLyon":
+			case "Thatcher":
+				residenceArea = "Northeast";
+				break;
 
             case "Cance":
             case "Coolidge":
@@ -130,12 +123,14 @@ function ConsumerConfirmation({post}){
         if(residenceArea === "Sylvan"|| residenceArea === "Northeast"||residenceArea==="NorthRes"){
             if(hall === "Berkshire" || hall=== "Hampshire"){
                 cost = 6.32; 
+            if(hall === "\"Berkshire\"" || hall=== "\"Hampshire\""){
+                cost = 6.33; 
             }
             else if(hall === "Worcester"){
                 cost = 3.75;
             }
             else{
-                cost = 4.91;
+                cost = 4.53;
             }
         }
         else if(residenceArea ==="Southwest"){
@@ -172,14 +167,14 @@ function ConsumerConfirmation({post}){
         
         
 
-        const pushOrder = new Order(residenceArea,residenceHall, parsedFood, parsedDrink, 3, '4:00', cost, phoneNumber, email , name, hall); 
+        const pushOrder = new Order(residenceArea,residenceHall, parsedFood, parsedDrink, 3, '4:00', cost, phoneNumber, email, name, hall); 
         //"Northeast", "Leach", ["asdlifj", "lfkdna"], ["dasilfnd"], 3 , "4:00", 6.77, "030-933-0320", "TEST@umass.edu", "lfadksjf", "WOOO"
         console.log(pushOrder.state);
 
-        post(pushOrder);
+		post(pushOrder);
 
-        navigate('/consumerHome/confirmation/checkout');
-    }
+		navigate("/consumerHome/confirmation/checkout");
+	};
 
     return (
       <body>
@@ -201,22 +196,20 @@ function ConsumerConfirmation({post}){
           <ul className="ulul">{parsedDrink}</ul>
         </div>
 
-        <div className="labels123">
-        <label className="labels123">
+        <label>
           Name:
           <input type="text" value={name} onChange={handleName} />
         </label>
         <br></br>
-        <label className="labels123">
+        <label>
           Phone Number:
           <input type="text" value={phoneNumber} onChange={handleNumber} />
         </label>
         <br></br>
-        <label className="labels123">
+        <label>
           Umass Email:
           <input type="text" value={email} onChange={handleEmail} />
         </label>
-        </div>
         <br></br>
         { <select
         id="residenceDropdown"
@@ -241,8 +234,8 @@ function ConsumerConfirmation({post}){
         <br></br>
         <button onClick={postOrder}>Order</button> */}
       </div>
-      </body>
+
     );
 }
 
-export default ConsumerConfirmation; 
+export default ConsumerConfirmation;

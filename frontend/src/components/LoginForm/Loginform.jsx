@@ -1,4 +1,4 @@
-import './style.module.css'
+import './style.css'
 import React from "react";
  
 const Popup = props => {
@@ -10,7 +10,7 @@ const Popup = props => {
     // </head>
     <div className="popup-box">
       <div className="box">
-        <span className="close-icon" onClick={props.handleClose}>x</span>
+        <span className="close-icon" onClick={props.handleClose}>X</span>
         {props.content}
       </div>
     </div>

@@ -18,6 +18,10 @@ export default function OrderDetail({order, onClickItem})
         navigate('/driverHome/driverPage');
     }
 
+    function RouteHome() {
+        navigate('/')
+    }
+
     return (
         <div
 			style={{

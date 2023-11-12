@@ -29,6 +29,12 @@ function OrderDetailPreview({order, onClickItem}) {
 
         <header>
             <h1>Order Detail Preview</h1>
+            <img
+				    src="/logo.png"
+				    alt="logo"
+				    className="munchpic"
+				    onClick={RouteHome}
+			      />
         </header>
 
         <div class="container">

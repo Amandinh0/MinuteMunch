@@ -3,7 +3,7 @@ import {useNavigate} from "react-router-dom";
 import "./OrderDetailPreview.css";
 import globalVariables from '../OrderListItem/globalVariables';
 
-function OrderDetailPreview({order}) {
+function OrderDetailPreview({order, onClickItem}) {
   console.log("from Detail", order)
   const sharedVariable = globalVariables.sharedVariable;
   const progressVariable = globalVariables.progressVariable;
@@ -11,6 +11,7 @@ function OrderDetailPreview({order}) {
   const navigate = useNavigate();
 
     function RouteHome() {
+      onClickItem(order)
       navigate('/driverHome/driverPage/driverOrderPreview/driverOrder');
     }
     function RouteBack() {
@@ -37,39 +38,27 @@ function OrderDetailPreview({order}) {
             <tbody>
                 <tr>
                 <th>Entree1:</th>
-                <td>MEAL</td>
+                <td>{order.foodList[0] == null ? "None" : order.foodList[0]}</td>
                 </tr>
                 <tr>
                 <th>Entree2:</th>
-                <td>MEAL</td>
+                <td>{order.foodList[1] == null ? "None" : order.foodList[1]}</td>
                 </tr>
                 <tr>
-                <th>Entree3:</th>
-                <td>MEAL</td>
-                </tr>
-                <tr>
-                <th>Side1:</th>
-                <td>MILK</td>
-                </tr>
-                <tr>
-                <th>Side2:</th>
-                <td>MILK</td>
-                </tr>
-                <tr>
-                <th>Side3:</th>
-                <td>MILK</td>
+                <th>Entree2:</th>
+                <td>{order.foodList[2] == null ? "None" : order.foodList[2]}</td>
                 </tr>
                 <tr>
                 <th>Drink:</th>
-                <td>MILK</td>
+                <td>{order.drink == null ? "None" : order.drink}</td>
                 </tr>
                 <tr>
                 <th>Delivery Location:</th>
-                <td>MILK</td>
+                <td>{order.location.residenceHall}</td>
                 </tr>
                 <tr>
                 <th>Pickup Location:</th>
-                <td>MILK</td>
+                <td>{order.diningHall}</td>
                 </tr>
             </tbody>
             </table>
@@ -79,7 +68,7 @@ function OrderDetailPreview({order}) {
             </div>
 
             <div class="total">
-            <h3 class="money">$10.00</h3>
+            <h3 class="money">{order.payout}</h3>
             </div>
         </div>
 

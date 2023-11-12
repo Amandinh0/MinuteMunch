@@ -23,6 +23,7 @@ function App() {
   const [ordersList, setOrders] = useState([]);
   const [postOrder, setPostOrder] = useState(null);
   const [currentOrder, setCurrentOrder] = useState(null);
+  const [deletedOrder, setDeleteOrder] = useState(null);
 
   const fetchSingleOrder = async email => {
     try {
@@ -81,6 +82,12 @@ function App() {
     // }
   }, [postOrder]);
 
+  useEffect(() => {
+    if (deletedOrder) {
+      deleteOrder(deletedOrder.email);
+    }
+  }, [deletedOrder]);
+
   
 
 	return (
@@ -91,7 +98,7 @@ function App() {
 				<Route path="/consumerHome" element={<ConsumerLayout />} />
 				<Route path="/driverHome" element={<DriverLayout />} />
 				<Route path="/driverHome/driverPage" element={<DriverPage orderList={ordersList} onClickPage={setCurrentOrder} />} />
-        <Route path="/driverHome/driverPage/driverOrderPreview" element={<OrderDetailPreview order={currentOrder}/>} />
+        <Route path="/driverHome/driverPage/driverOrderPreview" element={<OrderDetailPreview order={currentOrder} onClickItem={setDeleteOrder}/>} />
         <Route path="/driverHome/driverPage/driverOrderPreview/driverOrder" element={<OrderDetail />} />
 				<Route path="/consumerHome/consumerPage" element={<ConsumerPage />} />
 				<Route path="/" element={<SplitLayout />} />

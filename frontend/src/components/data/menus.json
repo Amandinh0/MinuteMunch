@@ -1,117 +1,108 @@
 {
-    "Worcester": {
-        "Breakfast": [
-            "Almond Poppy Seed Muffin Top",
-            "Assorted Cereals",
-            "Buttermilk Biscuit",
-            "Chicken Congee",
-            "Chocolate Chip Scones",
-            "Hard Boiled Eggs",
-            "Hot Oatmeal",
-            "O'Brien Potatoes",
-            "Scrambled Eggs",
-            "Sliced Kielbasa",
-            "1% Milk",
-            "Lowfat Chocolate Milk",
-            "Orange Juice"
-            
-        ],
-        "Lunch": [
-          "Black Rice",
-          "Buffalo Chicken",
-          "Corn w/Red Peppers",
-          "Double Chocolate Chip Cookies",
-          "Fudge Drop Brownie",
-          "Latin Toppings",
-          "Plant Based Chorizo Crumbles",
-          "Pork Carnitas",
-          "STOUFFER'S Macaroni and Cheese",
-          "Tri Colored Tortrilla Strips"
-        ],
-        "Drinks": [
-            "1% Milk",
-            "Lowfat Chocolate Milk",
-            "Orange Juice"
-        ]    
-    },
-    "Berkshire": {
-        "Breakfast": [
-            "Almond Poppy Seed Muffin Top",
-            "BRK Brkfst Sausage Sandwich",
-            "Breakfast Sandwich",
-            "Chocolate Chip Scones",
-            "GF Bacon Breakfast Bagel Sandwich",
-            "GF Breakfast Bagel Sandwich",
-            "Hot Oatmeal",
-            "O'Brien Potatoes",
-            "Scrambled Eggs",
-            "Smoked Bacon Slices",
-            "Strawberry Yogurt Parfait"
-        ],
-        "Lunch":[
-            "Black Beans",
-            "Corn w/Red Peppers",
-            "Double Chocolate Chip Cookies",
-            "French Fries",
-            "Fudge Drop Brownie",
-            "Pork Carnitas",
-            "Spicy Deluxe Fried Chicken Sandwich",
-            "Tri Colored Tortrilla Strips",
-            "Yellow Rice",
-            "Grab n'Go Cold",
-            "Buffalo Chicken Wrap",
-            "Chicken Caesar Salad",
-            "GF Peanut Butter & Strawberry Jam Sandwich",
-            "Gluten Free Turkey Sandwich",
-            "Tossed Salad",
-            "Tuna on White"
-        ]
-    },
-    "Hampshire": {
-        "Breakfast": [
-            "Almond Poppy Seed Muffin Top",
-            "Bacon Breakfast Sandwich (English Muffin)",
-            "Chocolate Chip Scones",
-            "GF Bacon Breakfast Bagel Sandwich",
-            "GF Breakfast Bagel Sandwich",
-            "Hot Oatmeal",
-            "Worcester Breakfast Sandwich",
-            "Yogurt Strawberry"
-        ],
-        "Drinks": [
-            "1% Milk",
-            "Lowfat Chocolate Milk",
-            "Orange Juice"
-        ]    
-    },
-    "Franklin": {
-        "Lunch":[
-            "Double Chocolate Chip Cookies",
-            "French Fries",
-            "Fudge Drop Brownie",
-            "General Tso Chicken",
-            "General Tso's Pulmuone Tofu",
-            "Jasmine Rice",
-            "Meatball Grinder",
-            "Plant Based Lemon Pepper Chic'n",
-            "Steamed Broccoli",
-            "Buffalo Chicken Wrap",
-            "GF Ham & American Cheese Whole Grain Bread",
-            "GF Ham & Swiss Sandwich",
-            "GF Tuna Salad Sandwich",
-            "GF Turkey & Provolone on Whole Grain Bread",
-            "Gluten Free Turkey Sandwich",
-            "Tossed Salad",
-            "Turkey Bacon Wrap"
-        ]
-    },
-    "Drinks": [
-        "Acai Vitamin Water",
-        "Lemon Vitamin Water",
-        "Water",
-        "Coke",
-        "Sprite",
-        "Lemonade",
-        "Iced Tea"
-    ]
+	"Worcester": {
+		"Breakfast": [
+			"   Almond Poppy Seed Muffin Top",
+			"   Assorted Cereals",
+			"   Buttermilk Biscuit",
+			"   Chicken Congee",
+			"   Chocolate Chip Scones",
+			"   Hard Boiled Eggs",
+			"   Hot Oatmeal",
+			"   O'Brien Potatoes",
+			"   Scrambled Eggs",
+			"   Sliced Kielbasa",
+			"   1% Milk",
+			"   Lowfat Chocolate Milk",
+			"   Orange Juice"
+		],
+		"Lunch": [
+			"   Black Rice",
+			"   Buffalo Chicken",
+			"   Corn w/Red Peppers",
+			"   Double Chocolate Chip Cookies",
+			"   Fudge Drop Brownie",
+			"   Latin Toppings",
+			"   Plant Based Chorizo Crumbles",
+			"   Pork Carnitas",
+			"   STOUFFER'S Macaroni and Cheese",
+			"   Tri Colored Tortrilla Strips"
+		],
+		"Drinks": ["   1% Milk", "   Lowfat Chocolate Milk", "   Orange Juice"]
+	},
+	"Berkshire": {
+		"Breakfast": [
+			"   Almond Poppy Seed Muffin Top",
+			"   BRK Brkfst Sausage Sandwich",
+			"   Breakfast Sandwich",
+			"   Chocolate Chip Scones",
+			"   GF Bacon Breakfast Bagel Sandwich",
+			"   GF Breakfast Bagel Sandwich",
+			"   Hot Oatmeal",
+			"   O'Brien Potatoes",
+			"   Scrambled Eggs",
+			"   Smoked Bacon Slices",
+			"   Strawberry Yogurt Parfait"
+		],
+		"Lunch": [
+			"   Black Beans",
+			"   Corn w/Red Peppers",
+			"   Double Chocolate Chip Cookies",
+			"   French Fries",
+			"   Fudge Drop Brownie",
+			"   Pork Carnitas",
+			"   Spicy Deluxe Fried Chicken Sandwich",
+			"   Tri Colored Tortrilla Strips",
+			"   Yellow Rice",
+			"   Grab n'Go Cold",
+			"   Buffalo Chicken Wrap",
+			"   Chicken Caesar Salad",
+			"   GF Peanut Butter & Strawberry Jam Sandwich",
+			"   Gluten Free Turkey Sandwich",
+			"   Tossed Salad",
+			"   Tuna on White"
+		]
+	},
+	"Hampshire": {
+		"Breakfast": [
+			"   Almond Poppy Seed Muffin Top",
+			"   Bacon Breakfast Sandwich (English Muffin)",
+			"   Chocolate Chip Scones",
+			"   GF Bacon Breakfast Bagel Sandwich",
+			"   GF Breakfast Bagel Sandwich",
+			"   Hot Oatmeal",
+			"   Worcester Breakfast Sandwich",
+			"   Yogurt Strawberry"
+		],
+		"Drinks": ["   1% Milk", "   Lowfat Chocolate Milk", "   Orange Juice"]
+	},
+	"Franklin": {
+		"Lunch": [
+			"   Double Chocolate Chip Cookies",
+			"   French Fries",
+			"   Fudge Drop Brownie",
+			"   General Tso Chicken",
+			"   General Tso's Pulmuone Tofu",
+			"   Jasmine Rice",
+			"   Meatball Grinder",
+			"   Plant Based Lemon Pepper Chic'n",
+			"   Steamed Broccoli",
+			"   Buffalo Chicken Wrap",
+			"   GF Ham & American Cheese Whole Grain Bread",
+			"   GF Ham & Swiss Sandwich",
+			"   GF Tuna Salad Sandwich",
+			"   GF Turkey & Provolone on Whole Grain Bread",
+			"   Gluten Free Turkey Sandwich",
+			"   Tossed Salad",
+			"   Turkey Bacon Wrap"
+		]
+	},
+	"Drinks": [
+		"   Acai Vitamin Water",
+		"   Lemon Vitamin Water",
+		"   Water",
+		"   Coke",
+		"   Sprite",
+		"   Lemonade",
+		"   Iced Tea"
+	]
 }

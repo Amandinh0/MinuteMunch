@@ -1,10 +1,23 @@
-function OrderList() {
-  return (
-    <>
-      
-    </>
-  ) 
-  
+import OrderListItem from "../OrderListItem/OrderListItem";
+import s from "./style.module.css";   
+
+function OrderList({orderList}) {
+    return(<div>
+        <div className={s.title}>You'll probably like :</div>
+        <div className={s.list}>
+            {
+            orderList.map((order)=> {
+                console.log("item created")
+                return (
+                    <span className={s.order_item} key={order.email}>
+                        <OrderListItem 
+                        order={order} 
+                        />
+                    </span>
+                );
+            })}
+        </div>
+    </div>);
 }
 
 export default OrderList

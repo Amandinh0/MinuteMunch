@@ -15,6 +15,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Order from "./order";
 import Checkout from "./components/ConsumerConfirmation/Checkout";
 import OrderDetailPreview from "./components/OrderDetailPreview/OrderDetailPreview";
+import DriverPage from "./components/DriverPage/DriverPage";
 
 
 function App() {
@@ -88,7 +89,7 @@ function App() {
 				<Route path="/consumerHome/confirmation" element={<ConsumerConfirmation post={setCurrentOrder} />} />
 				<Route path="/consumerHome" element={<ConsumerLayout />} />
 				<Route path="/driverHome" element={<DriverLayout />} />
-				<Route path="/driverHome/driverPage" element={<Driver />} />
+				<Route path="/driverHome/driverPage" element={<DriverPage orderList={ordersList} />} />
         <Route path="/driverHome/driverPage/driverOrderPreview" element={<OrderDetailPreview />} />
         <Route path="/driverHome/driverPage/driverOrderPreview/driverOrder" element={<OrderDetail />} />
 				<Route path="/consumerHome/consumerPage" element={<ConsumerPage />} />

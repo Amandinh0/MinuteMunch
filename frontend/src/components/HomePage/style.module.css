@@ -31,13 +31,13 @@ section div:hover {
 	object-fit: contain;
 }
 
-div button:hover {
+section div button:hover {
 	color: rgb(255, 35, 35);
 	font-size: 74px;
 	transition: all 0.25s ease-in-out;
 }
 
-div button {
+section div button {
 	font-size: 36px;
 	font-family: "Inter";
 	font-weight: 900;

@@ -9,6 +9,10 @@ const SplitLayout = () => {
 		navigate("/driverHome");
 	}
 
+	function routeConsumer() {
+		navigate("/consumerHome");
+	}
+
 	const sectionStyle = (section) => ({
 		backgroundImage: `url("${
 			section === "left"
@@ -29,7 +33,7 @@ const SplitLayout = () => {
 				onMouseEnter={() => setHoveredSection("left")}
 				onMouseLeave={() => setHoveredSection(null)}
 			>
-				<button type="button" id="left-button" onClick={routeDriver}>
+				<button class="butn" onClick={routeDriver}>
 					Become a Driver
 				</button>
 			</div>
@@ -39,7 +43,7 @@ const SplitLayout = () => {
 				onMouseEnter={() => setHoveredSection("right")}
 				onMouseLeave={() => setHoveredSection(null)}
 			>
-				<button type="button" id="right-button" onClick={routeDriver}>
+				<button class="butn" onClick={routeConsumer}>
 					Want to Munch
 				</button>
 			</div>

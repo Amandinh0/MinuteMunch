@@ -2,8 +2,23 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Popup from "../LoginForm/Loginform";
 import "../LoginForm/style.css"
+import { Button, Alert } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-function DriverLayout() {
+
+
+const DriverLayout = () => {
+    const navigate = useNavigate();
+
+    function RouteHome() {
+      navigate('/');
+    }
+
+    function RouteNext() {
+      navigate('/driverHome/driverPage');
+    }
+    
+
     const [isOpen, setIsOpen] = useState(false);
    
     const togglePopup = () => {
@@ -11,14 +26,11 @@ function DriverLayout() {
     }
    
     return <div>
-      <input
-        type="button"
+      <Button className = "preLogin"
         value="Click to Open Popup"
-        onClick={togglePopup}
-      />
-      <p className = "para1">
-        <input type = "text" className = "foo" name = "name" /> 
-      </p>
+        onClick={togglePopup}>
+        Click to Login</Button>
+      <img src="./logo.png" alt = "logo" className = "munchpic" onClick = {RouteHome} />
       {isOpen && <Popup
         content={<>
           <div classname = "LoginBox">
@@ -29,7 +41,7 @@ function DriverLayout() {
             <p>
               <input type = "text" className = "password" name = "pass" />
             </p>
-            <button>Login</button>
+            <Button onClick={RouteNext} >Login</Button>
           </div>
         </>}
         handleClose={togglePopup}

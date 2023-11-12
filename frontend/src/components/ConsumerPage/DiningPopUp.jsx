@@ -43,11 +43,15 @@ function DiningPopUp(props){
       }
 
       function AfterSubmit() {
-
+        let list = null;
+        if (breakfastItem.length > 0) {
+          list = breakfastItem;
+        } else {
+          list = lunchItem;
+        } 
         navigate('/consumerHome/confirmation', {
           state: { 
-            breakfast: JSON.stringify(breakfastItem), 
-            lunch: JSON.stringify(lunchItem),
+            food: JSON.stringify(list), 
             drink: JSON.stringify(drinkItem),
             hall: JSON.stringify(hallName)
           }

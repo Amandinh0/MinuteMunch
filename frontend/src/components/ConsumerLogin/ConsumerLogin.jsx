@@ -106,11 +106,6 @@ const ConsumerLayout = () => {
 								<div className="spacer"></div>
 								<div className="spacer"></div>
 								<div className="spacer"></div>
-								<div className="spacer"></div>
-								<div className="spacer"></div>
-								<div className="spacer"></div>
-								<div className="spacer"></div>
-								<div className="spacer"></div>
 								<div className="rightmove">
 									<button className="btn btn-primary" onClick={RouteNext}>
 										Login

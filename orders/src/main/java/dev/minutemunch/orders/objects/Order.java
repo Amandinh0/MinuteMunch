@@ -35,10 +35,10 @@ public class Order {
         return foodList;
     }
 
-    private List<String> drinkList;
+    private String drink;
 
-    public List<String> getDrinkList() {
-        return drinkList;
+    public String getDrink() {
+        return drink;
     }
 
     private Integer diningSwipes;
@@ -81,9 +81,9 @@ public class Order {
     public String getDiningHall() {
         return diningHall;
     }
-    public Order(Location location, List<String> foodList, List<String> drinkList, Integer diningSwipes, String eta, Float payout, String phoneNumber, String email, String name, String diningHall) {
+    public Order(Location location, List<String> foodList, String drink, Integer diningSwipes, String eta, Float payout, String phoneNumber, String email, String name, String diningHall) {
         this.foodList = foodList;
-        this.drinkList = drinkList;
+        this.drink = drink;
         this.diningSwipes = diningSwipes;
         this.eta = eta;
         this.payout = payout;

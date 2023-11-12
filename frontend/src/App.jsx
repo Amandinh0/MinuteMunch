@@ -13,13 +13,14 @@ import OrdersAPI from "./api/orders";
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Order from "./order";
+import Checkout from "./components/ConsumerConfirmation/Checkout";
 import OrderDetailPreview from "./components/OrderDetailPreview/OrderDetailPreview";
 
 
 function App() {
 
   const [ordersList, setOrders] = useState([]);
-  const [currentOrder, setCurrentOrder] = useState();
+  const [currentOrder, setCurrentOrder] = useState(null);
 
   const fetchSingleOrder = async email => {
     try {
@@ -31,17 +32,12 @@ function App() {
 
   const fetchOrders = async () =>{
     try
-    {setOrders(await OrdersAPI.fetchOrders());} 
+    {
+      setOrders(await OrdersAPI.fetchOrders());
+      console.log(ordersList);
+    } 
     catch(err)
     {console.log(err);}
-  };
-
-  const postOrders = async order => {
-    try {
-      const response = await OrdersAPI.postOrder(order);
-    } catch(err) {
-      console.log(err);
-    }
   };
 
   const deleteOrder = async email => {
@@ -52,22 +48,44 @@ function App() {
     }
   };
 
-  useEffect(() => {
-    fetchOrders();
-  }, []);
+  const getPassword = async email => {
+    try {
+      const response = await OrdersAPI.getUserPassword(email);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  const postOrders = async order => {
+    try {
+      const response = await OrdersAPI.postOrder(order);
+      console.log(response);
+    } catch(err) {
+      console.log(err);
+    }
+  };
 
   useEffect(() => {
-    //fetchSingleOrder();    
-    const backdkd = new Order("Northeast", "Leach", ["asdlifj", "lfkdna"], ["dasilfnd"], 3 , "4:00", 6.77, "030-933-0320", "FADSLKJD@umass.edu", "lfadksjf", "WOOO");
-    postOrders(backdkd.state);
-  }, []);
+    fetchOrders();
+  }, []); //refresh when root back to home
+
+  useEffect(() => {
+    if (currentOrder) {
+      postOrders(currentOrder.state);
+    }
+    // if (currentOrder) {
+    //   const backdkd = new Order("Northeast", "Leach", ["asdlifj", "lfkdna"], ["dasilfnd"], 3 , "4:00", 6.77, "030-933-0320", "TEST@umass.edu", "lfadksjf", "WOOO");
+    //   postOrders(backdkd.state);
+    // }
+  }, [currentOrder]);
 
   
 
 	return (
 		<Router>
 			<Routes>
-				<Route path="/consumerHome/confirmation" element={<ConsumerConfirmation />} />
+        <Route path="/consumerHome/confirmation/checkout" element={<Checkout />} />
+				<Route path="/consumerHome/confirmation" element={<ConsumerConfirmation post={setCurrentOrder} />} />
 				<Route path="/consumerHome" element={<ConsumerLayout />} />
 				<Route path="/driverHome" element={<DriverLayout />} />
 				<Route path="/driverHome/driverPage" element={<Driver />} />

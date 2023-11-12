@@ -30,7 +30,7 @@ class OrderService {
 
     public Order addOrder(Order newOrder) {
 
-        Order order = new Order(newOrder.getLocation(), newOrder.getFoodList(), newOrder.getDrinkList(), newOrder.getDiningSwipes(), newOrder.getEta(), newOrder.getPayout(), newOrder.getPhoneNumber(), newOrder.getEmail(), newOrder.getName(), newOrder.getDiningHall());
+        Order order = new Order(newOrder.getLocation(), newOrder.getFoodList(), newOrder.getDrink(), newOrder.getDiningSwipes(), newOrder.getEta(), newOrder.getPayout(), newOrder.getPhoneNumber(), newOrder.getEmail(), newOrder.getName(), newOrder.getDiningHall());
 
         Order savedOrder = repository.save(order);
 

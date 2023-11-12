@@ -14,8 +14,10 @@ export default function OrderListItem({order, itemClicked}) {
   return (
     <>
       <div className="button-grid">
-      <button onClick={OrderDetailNavigate} className="btn-modal">
-        View Order
+      <button onClick={OrderDetailNavigate} className="container">
+        <h1 className="pay">Pay: {order.payout}</h1>
+        <div className="items-swipes">Items: {order.diningSwipes}</div>
+        <div className="locations">{order.diningHall} to {order.location.residenceArea}</div>
       </button>
       </div>
     </>

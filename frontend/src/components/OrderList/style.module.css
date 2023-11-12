@@ -1,17 +1,19 @@
 .order_item {
-	flex: 1;
-	gap: 10px;
-	height: 10vh;
-	z-index: 10;
+    display: flex;
+	height: 20vh;
+    width: 20vw;
+    margin-right: 0vw;
+    margin-bottom: 10vh;
+    
 }
 
 .list {
-	display: flex;
-	width: 100vw - 25px;
-	overflow-x: hidden;
-	padding-bottom: 30px;
-	height: 10vh;
-	z-index: 10;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 95vw;
+    height: 90vh;
+    overflow-y: scroll;
 }
 
 html {
@@ -26,4 +28,11 @@ html {
 	height: 100vh;
 	width: 100vw;
 	z-index: 10;
+}
+
+.pendingtexts {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 60px;
+    font-weight: 900;
+    color: black;
 }

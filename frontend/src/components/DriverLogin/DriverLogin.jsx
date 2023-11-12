@@ -12,35 +12,6 @@ const DriverLayout = () => {
 
     function RouteHome() {
       navigate('/');
-    function loginpopup(){
-        let userInput = '';
-        let userInput2 = '';
-        let a = 1;
-
-        while (userInput === '' && a === 1)
-        {
-            userInput = prompt('Enter Username:');
-            if(userInput === null)
-            {
-                a = 0;
-            }
-        }
-        console.log('Username entered:', userInput);
-
-        while (userInput2 === '' && a === 1) 
-        {
-            userInput2 = prompt('Enter Password:');
-            if(userInput2 === null)
-            {
-                a = 0;
-            }
-        }
-        console.log('Password entered:', userInput2);
-
-        if(a === 1)
-        {
-            navigate('/driverHome/driverPage');
-        }
     }
 
     function RouteNext() {
@@ -77,5 +48,5 @@ const DriverLayout = () => {
       />}
     </div>
   }
-}
+
 export default DriverLayout;

@@ -2,6 +2,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import OrdersAPI from "../../api/orders";
 import { useState, useEffect } from "react";
 import Order from "../../order";
+import Housing from "../data/locations.json"; 
 
 
 
@@ -50,7 +51,129 @@ function ConsumerConfirmation({post}){
 
     const postOrder = e => {
         e.preventDefault();
-        const pushOrder = new Order("residenceArea",residenceHall, parsedFood, parsedDrink, 3, '4:00', 0.77, phoneNumber, email , name, hall); 
+        let residenceArea = null; 
+        let cost = 0; 
+
+        switch(residenceHall){
+            case "Brown":
+            case "McNamara":
+            case "Cashin":
+                residenceArea = "Sylvan";
+                break; 
+            
+            case "Baker":
+            case "Brett":
+            case "Brooks":
+            case "Butterfield":
+            case "Chadbourne":
+            case "Gorman":
+            case "Greenough":
+            case "Wheeler":
+                residenceArea = "Central";
+                break; 
+            
+            case "Birch":
+            case "Elm":
+            case "Linden":
+            case "Maple":
+            case "OakHill":
+            case "Sycamore":
+                residenceArea = "Honors";
+                break; 
+            
+            case "Crabtree":
+            case "Dwight":
+            case "Hamlin":
+            case "Johnson":
+            case "Knowlton":
+            case "Leach":
+            case "Lewis":
+            case "MaryLyon":
+            case "Thatcher":
+                residenceArea = "Northeast";
+                break; 
+
+            case "Cance":
+            case "Coolidge":
+            case "Crampton":
+            case "Emerson":
+            case "James":
+            case "Adams":
+            case "QuincyAdams":
+            case "Kennedy":
+            case "MacKimmie":
+            case "Melville":
+            case "Moore":
+            case "Patterson":
+            case "Pierpont":
+            case "Prince":
+            case "Thoreau":
+            case "Washington":
+                residenceArea = "Southwest";
+                break; 
+            case "NAptA":
+            case "NAptB":
+            case "NAptC":
+            case "NAptD":
+                residenceArea = "NorthRes";
+                break; 
+            
+            case "Dickinson":
+            case "Field":
+            case "Grayson":
+            case "Webster":
+                residenceArea = "OHill";
+                break;
+        }
+        
+        if(residenceArea === "Sylvan"|| residenceArea === "Northeast"||residenceArea==="NorthRes"){
+            if(hall === "\"Berkshire\"" || hall=== "\"Hampshire\""){
+                cost = 6; 
+            }
+            else if(hall === "\"Worcester\""){
+                cost = 3;
+            }
+            else{
+                cost = 4;
+            }
+        }
+        else if(residenceArea ==="Southwest"){
+            if(hall === "\"Berkshire\"" || hall === "\"Hampshire\""){
+                cost = 3; 
+            }
+            else if(hall === "\"Worcester\""){
+                cost = 6;
+            }
+            else{
+                cost = 5;
+            }
+        }
+        else if(residenceArea === "OHill"||residenceArea === "Central"){
+            if(hall === "\"Berkshire\"" || hall === "\"Hampshire\""){
+                cost = 5; 
+            }
+            else if(hall === "\"Worcester\""){
+                cost = 4;
+            }
+            else{
+                cost = 3;
+            }
+        }
+        else{
+            if(hall === "\"Berkshire\"" || hall === "\"Hampshire\"" || hall === "\"Worcester\""){
+                cost = 4; 
+            }
+            else{
+                cost = 5;
+            }
+        }
+
+        
+        let addedNumber = Math.random(); 
+        cost = cost + addedNumber; 
+        cost = cost.toFixed(2);
+
+        const pushOrder = new Order(residenceArea,residenceHall, parsedFood, parsedDrink, 3, '4:00', cost, phoneNumber, email , name, hall); 
         //"Northeast", "Leach", ["asdlifj", "lfkdna"], ["dasilfnd"], 3 , "4:00", 6.77, "030-933-0320", "TEST@umass.edu", "lfadksjf", "WOOO"
         console.log(pushOrder.state);
 
@@ -93,17 +216,30 @@ function ConsumerConfirmation({post}){
           <input type="text" value={email} onChange={handleEmail} />
         </label>
         <br></br>
-        <label>
+        { <select
+        id="residenceDropdown"
+        value={residenceHall}
+        onChange={handleHall}
+      >
+        <option value="">Select a residence</option>
+        {Object.keys(Housing).map((residenceName) => (
+          <option key={residenceName} value={residenceName}>
+            {residenceName}
+          </option>
+        ))}
+      </select>
+      }
+      <br></br>
+      <button onClick={postOrder}>Order</button>
+        {/* <label>
           Residence Hall:
           <input type="text" value={residenceHall} onChange={handleHall} />
         </label>
         <br></br>
         <br></br>
-        <button onClick={postOrder}>Order</button>
+        <button onClick={postOrder}>Order</button> */}
       </div>
 
-      // <p>Breakfast items: {JSON.stringify(parsedBreakfast)}</p>
-      //<p>Lunch items: {JSON.stringify(parsedLunch)}</p>
     );
 }
 

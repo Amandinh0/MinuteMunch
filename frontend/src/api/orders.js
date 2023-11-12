@@ -33,7 +33,7 @@ class OrdersAPI {
     static async getUserPassword(email) {
         const response = await axios.get(`${BASE_ROOT}/api/users/${email}`)
         console.log(response.data)
-        return response.data
+        return response.data;
     }
 }
 

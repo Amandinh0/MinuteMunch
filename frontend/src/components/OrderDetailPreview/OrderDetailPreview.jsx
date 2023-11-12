@@ -36,42 +36,42 @@ function OrderDetailPreview() {
             <table>
             <tbody>
                 <tr>
-                <th>Entree</th>
+                <th>Entree:</th>
                 <td>MEAL</td>
                 </tr>
                 <tr>
-                <th>Side1</th>
+                <th>Side1:</th>
                 <td>MILK</td>
                 </tr>
                 <tr>
-                <th>Side2</th>
+                <th>Side2:</th>
                 <td>MILK</td>
                 </tr>
                 <tr>
-                <th>Side3</th>
+                <th>Side3:</th>
                 <td>MILK</td>
                 </tr>
                 <tr>
-                <th>Side4</th>
+                <th>Side4:</th>
                 <td>MILK</td>
                 </tr>
                 <tr>
-                <th>Delivery Location</th>
+                <th>Delivery Location:</th>
                 <td>MILK</td>
                 </tr>
                 <tr>
-                <th>Pickup Location</th>
+                <th>Pickup Location:</th>
                 <td>MILK</td>
                 </tr>
             </tbody>
             </table>
 
             <div>
-              <button onClick={RouteHome} className="accept-button">ACCEPT ORDER</button><button onClick={RouteBack} className="reject-button">REJECT ORDER</button>
+              <button onClick={RouteHome} className="accept-button">Accept Order</button><button onClick={RouteBack} className="reject-button">Reject Order</button>
             </div>
 
             <div class="total">
-            <h3>$10.00</h3>
+            <h3 class="money">$10.00</h3>
             </div>
         </div>
 

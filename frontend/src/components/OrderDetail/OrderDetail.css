@@ -52,4 +52,12 @@
       left: 10px;
       padding: 20px 14px;
       margin-bottom: -30px;
+      margin-right: 40px;
+      background-color: #99ff99;
+    }
+
+    h3 {
+      color: green;
+      font-size: 30;
+      font-weight: bold;
     }

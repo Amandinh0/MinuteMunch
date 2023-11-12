@@ -1,6 +1,6 @@
 import React from "react";
 import "./OrderDetail.css";
-import globalVariables from './globalVariables';
+import globalVariables from '../OrderListItem/globalVariables';
 
 export default function OrderDetail()
 {
@@ -46,6 +46,18 @@ export default function OrderDetail()
                 <td>$30.00</td>
                 <td>$30.00</td>
                 </tr>
+                <tr>
+                <td>Ice Tea</td>
+                <td>2</td>
+                <td>$25.00</td>
+                <td>$50.00</td>
+                </tr>
+                <tr>
+                <td>Turkey Sandwich</td>
+                <td>3</td>
+                <td>$5.00</td>
+                <td>$15.00</td>
+                </tr>
             </tbody>
             </table>
 
@@ -69,10 +81,6 @@ export default function OrderDetail()
                     <th>User Notes</th>
                     <td>It better taste good bro!</td>
                 </tr>
-                <tr>
-                    <th>QR Code</th>
-                    <td><img src="QRCODE.jpg" alt="HELLO"></img></td>
-                </tr>
                 </tbody>
             </table>
 
@@ -83,7 +91,7 @@ export default function OrderDetail()
             </div>
 
             <div class="total">
-            <strong>Total:</strong> $70.00
+            <h3>$135.00</h3>
             </div>
         </div>
 

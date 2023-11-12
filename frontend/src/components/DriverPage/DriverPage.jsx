@@ -1,4 +1,3 @@
-import Modal from "../OrderListItem/Modal";
 import OrderListItem from "../OrderListItem/OrderListItem";
 
 function Driver() {

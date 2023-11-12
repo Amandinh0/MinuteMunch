@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ConsumerLayout from "./components/ConsumerLogin/ConsumerLogin";
 import DriverLayout from "./components/DriverLogin/DriverLogin";
 import Driver from "./components/DriverPage/DriverPage";
-import OrderDetail from "./components/OrderListItem/OrderDetail";
+import OrderDetail from "./components/OrderDetail/OrderDetail";
 import ConsumerPage from "./components/ConsumerPage/ConsumerPage";
 import ConsumerConfirmation from "./components/ConsumerConfirmation/ConsumerConfirmation";
 import { React, useEffect, useState} from "react";
@@ -14,6 +14,7 @@ import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Order from "./order";
 import Checkout from "./components/ConsumerConfirmation/Checkout";
+import OrderDetailPreview from "./components/OrderDetailPreview/OrderDetailPreview";
 
 
 function App() {
@@ -88,7 +89,8 @@ function App() {
 				<Route path="/consumerHome" element={<ConsumerLayout />} />
 				<Route path="/driverHome" element={<DriverLayout />} />
 				<Route path="/driverHome/driverPage" element={<Driver />} />
-        <Route path="/driverHome/driverPage/driverOrder" element={<OrderDetail />} />
+        <Route path="/driverHome/driverPage/driverOrderPreview" element={<OrderDetailPreview />} />
+        <Route path="/driverHome/driverPage/driverOrderPreview/driverOrder" element={<OrderDetail />} />
 				<Route path="/consumerHome/consumerPage" element={<ConsumerPage />} />
 				<Route path="/" element={<SplitLayout />} />
 			</Routes>

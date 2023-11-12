@@ -3,8 +3,6 @@ import OrdersAPI from "../../api/orders";
 import { useState, useEffect } from "react";
 import Order from "../../order";
 
-
-
 function ConsumerConfirmation({post}){
 
   // const [currentOrder, setOrder] = useState();

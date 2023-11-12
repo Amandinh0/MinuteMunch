@@ -2,7 +2,7 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f4f4f4;
+      background-color: #e2ec4e;
     }
 
     header {
@@ -60,8 +60,7 @@
     }
 
     h3 {
-      color: green;
       font-size: 30;
       font-weight: bold;
-      
+      color: green;
     }

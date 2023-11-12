@@ -1,6 +1,7 @@
 import React from "react";
 import "./OrderDetail.css";
 import globalVariables from '../OrderListItem/globalVariables';
+import {useNavigate} from "react-router-dom";
 
 export default function OrderDetail()
 {
@@ -8,14 +9,27 @@ export default function OrderDetail()
     const sharedVariable = globalVariables.sharedVariable;
     const progressVariable = globalVariables.progressVariable;
 
+    const navigate = useNavigate();
+
+    const myStyles = {backgroundColor: '#ebe2c4'};
+    
+    function RouteOrder() {
+      navigate('/driverHome/driverPage');
+    }
+
     return (
+        <div
+			style={{
+				backgroundColor: "#EBE2C4",
+			}}
+		>
         <html lang="en">
         <head>
         <meta charset="UTF-8"></meta>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
         <title>Order Detail</title> 
         </head>
-        <body>
+        <body style={myStyles}>
 
         <header>
             <h1>Order Detail Page</h1>
@@ -85,7 +99,7 @@ export default function OrderDetail()
             </table>
 
             <div>
-                <button className="progress-button">
+                <button onClick={RouteOrder} className="progress-button">
                 Mark Order Completed
                 </button>
             </div>
@@ -97,6 +111,7 @@ export default function OrderDetail()
 
         </body>
         </html>
+        </div>
     )
 
 }

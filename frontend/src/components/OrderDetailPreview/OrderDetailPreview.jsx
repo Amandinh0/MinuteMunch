@@ -36,7 +36,15 @@ function OrderDetailPreview() {
             <table>
             <tbody>
                 <tr>
-                <th>Entree:</th>
+                <th>Entree1:</th>
+                <td>MEAL</td>
+                </tr>
+                <tr>
+                <th>Entree2:</th>
+                <td>MEAL</td>
+                </tr>
+                <tr>
+                <th>Entree3:</th>
                 <td>MEAL</td>
                 </tr>
                 <tr>
@@ -52,7 +60,7 @@ function OrderDetailPreview() {
                 <td>MILK</td>
                 </tr>
                 <tr>
-                <th>Side4:</th>
+                <th>Drink:</th>
                 <td>MILK</td>
                 </tr>
                 <tr>

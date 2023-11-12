@@ -1,12 +1,15 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Popup from "../LoginForm/Loginform";
+import {useNavigate} from "react-router-dom";
 import "../LoginForm/style.css";
 import { Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ReCAPTCHA from "react-google-recaptcha";
 
-const DriverLayout = () => {
+function DriverLayout ({setEmailStr, setPassStr, setReq, passList}) {
+    const [email, setEmail] = useState("");
+    const [pass, setPass] = useState("");
+
 	const navigate = useNavigate();
 
 	function RouteHome() {
@@ -14,7 +17,20 @@ const DriverLayout = () => {
 	}
 
 	function RouteNext() {
-		navigate("/driverHome/driverPage");
+        setEmailStr(email);
+        setPassStr(pass)
+        let loop = 0;
+        let bool = false;
+        while (loop < 5 && !bool) {
+            if (passList[loop] == pass) {
+                navigate("/driverHome/driverPage");
+                bool = true;
+            }
+            loop += 1;
+        }
+        if (loop == 5) {
+            alert("Invalid Username/Password");
+        }
 	}
 
 	const [isOpen, setIsOpen] = useState(false);
@@ -22,6 +38,16 @@ const DriverLayout = () => {
 	const togglePopup = () => {
 		setIsOpen(!isOpen);
 	};
+
+    function handleChangeEmail(e){
+        console.log(e.target.value);
+        setEmail(e.target.value);
+    }
+
+    function handleChangePassword(e){
+        console.log(e.target.value);
+        setPass(e.target.value);
+    }
 
 	return (
 		<div
@@ -79,6 +105,7 @@ const DriverLayout = () => {
 										className="username"
 										name="email"
 										placeholder="Email"
+                                        onChange={handleChangeEmail}
 									/>
 								</p>
 								<p>
@@ -87,6 +114,7 @@ const DriverLayout = () => {
 										className="password"
 										name="pass"
 										placeholder="Password"
+                                        onChange={handleChangePassword}
 									/>
 								</p>
 								<ReCAPTCHA sitekey={process.env.REACT_APP_SITE_KEY} />

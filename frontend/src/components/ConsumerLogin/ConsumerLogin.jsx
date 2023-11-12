@@ -6,15 +6,30 @@ import { Button, Alert } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ReCAPTCHA from "react-google-recaptcha";
 
-const ConsumerLayout = () => {
+const ConsumerLayout = ({setEmailStr, setPassStr, setReq, passList}) => {
+    const [email, setEmail] = useState("");
+    const [pass, setPass] = useState("");
 	const navigate = useNavigate();
 
 	function RouteHome() {
 		navigate("/");
 	}
 
-	function RouteNext() {
-		navigate("/consumerHome/consumerPage");
+	function RouteNext() {        
+        setEmailStr(email);
+        setPassStr(pass)
+        let loop = 0;
+        let bool = false;
+        while (loop < 5 && !bool) {
+            if (passList[loop] == pass) {
+                navigate("/consumerHome/consumerPage");
+                bool = true;
+            }
+            loop += 1;
+        }
+        if (loop == 5) {
+            alert("Invalid Username/Password");
+        }
 	}
 
 	const [isOpen, setIsOpen] = useState(false);
@@ -22,6 +37,16 @@ const ConsumerLayout = () => {
 	const togglePopup = () => {
 		setIsOpen(!isOpen);
 	};
+
+    function handleChangeEmail(e){
+        console.log(e.target.value);
+        setEmail(e.target.value);
+    }
+
+    function handleChangePassword(e){
+        console.log(e.target.value);
+        setPass(e.target.value);
+    }
 
 	return (
 		<div
@@ -85,6 +110,7 @@ const ConsumerLayout = () => {
 										className="username"
 										name="email"
 										placeholder="Email"
+                                        onChange={handleChangeEmail}
 									/>
 								</p>
 								<p>
@@ -93,6 +119,7 @@ const ConsumerLayout = () => {
 										className="password"
 										name="pass"
 										placeholder="Password"
+                                        onChange={handleChangePassword}
 									/>
 								</p>
 								<ReCAPTCHA sitekey={process.env.REACT_APP_SITE_KEY} />

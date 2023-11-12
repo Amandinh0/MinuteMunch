@@ -128,18 +128,18 @@ function ConsumerConfirmation({post}){
         
         if(residenceArea === "Sylvan"|| residenceArea === "Northeast"||residenceArea==="NorthRes"){
             if(hall === "\"Berkshire\"" || hall=== "\"Hampshire\""){
-                cost = 6.32; 
+                cost = 6.33; 
             }
             else if(hall === "\"Worcester\""){
-                cost = 3.75;
+                cost = 3.33;
             }
             else{
-                cost = 4.91;
+                cost = 4.53;
             }
         }
         else if(residenceArea ==="Southwest"){
             if(hall === "\"Berkshire\"" || hall === "\"Hampshire\""){
-                cost = 3.01; 
+                cost = 3.56; 
             }
             else if(hall === "\"Worcester\""){
                 cost = 6.23;
@@ -171,7 +171,7 @@ function ConsumerConfirmation({post}){
         
         
 
-        const pushOrder = new Order(residenceArea,residenceHall, parsedFood, parsedDrink, 3, '4:00', cost, phoneNumber, email , name, hall); 
+        const pushOrder = new Order(residenceArea,residenceHall, parsedFood, parsedDrink, 3, '4:00', cost, phoneNumber, email, name, hall); 
         //"Northeast", "Leach", ["asdlifj", "lfkdna"], ["dasilfnd"], 3 , "4:00", 6.77, "030-933-0320", "TEST@umass.edu", "lfadksjf", "WOOO"
         console.log(pushOrder.state);
 

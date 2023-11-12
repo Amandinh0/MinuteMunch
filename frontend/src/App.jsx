@@ -24,6 +24,7 @@ function App() {
   const [postOrder, setPostOrder] = useState(null);
   const [currentOrder, setCurrentOrder] = useState(null);
   const [deletedOrder, setDeleteOrder] = useState(null);
+  const [changeOrder, setChangeOrder] = useState(null);
 
   const fetchSingleOrder = async email => {
     try {
@@ -70,7 +71,7 @@ function App() {
 
   useEffect(() => {
     fetchOrders();
-  }, []); //refresh when root back to home
+  }, [changeOrder]); //refresh when root back to home
 
   useEffect(() => {
     if (postOrder) {
@@ -99,7 +100,7 @@ function App() {
 				<Route path="/driverHome" element={<DriverLayout />} />
 				<Route path="/driverHome/driverPage" element={<DriverPage orderList={ordersList} onClickPage={setCurrentOrder} />} />
         <Route path="/driverHome/driverPage/driverOrderPreview" element={<OrderDetailPreview order={currentOrder} onClickItem={setDeleteOrder}/>} />
-        <Route path="/driverHome/driverPage/driverOrderPreview/driverOrder" element={<OrderDetail />} />
+        <Route path="/driverHome/driverPage/driverOrderPreview/driverOrder" element={<OrderDetail order={currentOrder} onClickItem={setChangeOrder}/>} />
 				<Route path="/consumerHome/consumerPage" element={<ConsumerPage />} />
 				<Route path="/" element={<SplitLayout />} />
 			</Routes>

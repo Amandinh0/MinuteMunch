@@ -3,7 +3,7 @@ import "./OrderDetail.css";
 import globalVariables from '../OrderListItem/globalVariables';
 import {useNavigate} from "react-router-dom";
 
-export default function OrderDetail()
+export default function OrderDetail({order, onClickItem})
 {
 
     const sharedVariable = globalVariables.sharedVariable;
@@ -14,7 +14,8 @@ export default function OrderDetail()
     const myStyles = {backgroundColor: '#ebe2c4'};
     
     function RouteOrder() {
-      navigate('/driverHome/driverPage');
+        onClickItem(order);
+        navigate('/driverHome/driverPage');
     }
 
     return (
@@ -42,35 +43,20 @@ export default function OrderDetail()
             <thead>
                 <tr>
                 <th>Item</th>
-                <th>Quantity</th>
-                <th>Price</th>
-                <th>Total</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                <td>General Tso Chicken</td>
-                <td>2</td>
-                <td>$20.00</td>
-                <td>$40.00</td>
+                <td>{order.foodList[0] == null ? "None" : order.foodList[0]}</td>
                 </tr>
                 <tr>
-                <td>Chocolate Milk</td>
-                <td>1</td>
-                <td>$30.00</td>
-                <td>$30.00</td>
+                <td>{order.foodList[1] == null ? "None" : order.foodList[1]}</td>
                 </tr>
                 <tr>
-                <td>Ice Tea</td>
-                <td>2</td>
-                <td>$25.00</td>
-                <td>$50.00</td>
+                <td>{order.foodList[2] == null ? "None" : order.foodList[2]}</td>
                 </tr>
                 <tr>
-                <td>Turkey Sandwich</td>
-                <td>3</td>
-                <td>$5.00</td>
-                <td>$15.00</td>
+                <td>{order.drink == null ? "None" : order.drink}</td>
                 </tr>
             </tbody>
             </table>
@@ -79,21 +65,29 @@ export default function OrderDetail()
                 <thead>
                 <tr>
                     <th>Name</th>
-                    <td>{sharedVariable}</td>
+                    <td>{order.name}</td>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
                     <th>Delivery Location</th>
-                    <td>Sylvan</td>
+                    <td>{order.location.residenceHall}</td>
                 </tr>
                 <tr>
                     <th>Pickup Location</th>
-                    <td>Frank Dining Hall</td>
+                    <td>{order.diningHall}</td>
                 </tr>
                 <tr>
                     <th>User Notes</th>
                     <td>It better taste good bro!</td>
+                </tr>
+                <tr>
+                    <th>Phone Number</th>
+                    <td>{order.phoneNumber}</td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td>{order.email}</td>
                 </tr>
                 </tbody>
             </table>
@@ -105,7 +99,7 @@ export default function OrderDetail()
             </div>
 
             <div class="total">
-            <h3>$135.00</h3>
+            <h3>${order.payout}  |   {order.diningSwipes} Dining Swipes</h3>
             </div>
         </div>
 

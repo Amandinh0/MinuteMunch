@@ -33,14 +33,14 @@
 .left-half button,
 .right-half button {
 	padding: 10px;
-	font-size: 16px;
+	font-size: 32px;
 }
 
 .order-popup button {
 	margin-top: 3%;
 	margin-left: 3%;
 	padding: 100px;
-	font-size: 16px;
+	font-size: 32px;
 }
 
 .grid-button {

@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 function DiningPopUp(props) {
 	const [breakfastItem, setbreakfastItem] = useState([]);
-	const [lunchItem, setlunchItem] = useState([]);
+	const[lunchitem, setlunchitem] = useState([]);
 	const [drinkItem, setdrinkItem] = useState("");
 	const hallName = props.hallName;
 	const navigate = useNavigate();
@@ -24,13 +24,13 @@ function DiningPopUp(props) {
 	};
 
 	const handleLunchChange = (item) => {
-		if (lunchItem.includes(item)) {
+		if (lunchitem.includes(item)) {
 			// If item is already selected, remove it
-			setlunchItem(lunchItem.filter((selectedItem) => selectedItem !== item));
+			setlunchitem(lunchitem.filter((selectedItem) => selectedItem !== item));
 		} else {
 			// If item is not selected and the maximum selection limit is not reached, add it
-			if (lunchItem.length < 3) {
-				setlunchItem([...lunchItem, item]);
+			if (lunchitem.length < 3) {
+				setlunchitem([...lunchitem, item]);
 			}
 		}
 	};
@@ -45,7 +45,7 @@ function DiningPopUp(props) {
 		if (breakfastItem.length > 0) {
 			list = breakfastItem;
 		} else {
-			list = lunchItem;
+			list = lunchitem;
 		}
 		navigate("/consumerHome/confirmation", {
 			state: {
@@ -88,7 +88,7 @@ function DiningPopUp(props) {
 								<label>
 									<input
 										type="checkbox"
-										checked={lunchItem.includes(item)}
+										checked={lunchitem.includes(item)}
 										onChange={() => handleLunchChange(item)}
 									/>
 									{item}

@@ -2,7 +2,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 import OrdersAPI from "../../api/orders";
 import { useState, useEffect } from "react";
 import Order from "../../order";
-import Housing from "../data/locations.json"; 
+import Housing from "../data/locations.json";
+import "./ConsumerConfirmation.css";
 
 
 
@@ -199,6 +200,7 @@ function ConsumerConfirmation({post}){
           <ul>{parsedDrink}</ul>
         </div>
 
+        <div className="labels">
         <label>
           Name:
           <input type="text" value={name} onChange={handleName} />
@@ -213,6 +215,7 @@ function ConsumerConfirmation({post}){
           Umass Email:
           <input type="text" value={email} onChange={handleEmail} />
         </label>
+        </div>
         <br></br>
         { <select
         id="residenceDropdown"

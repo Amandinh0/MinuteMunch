@@ -8,20 +8,32 @@ function DriverLayout(){
     function loginpopup(){
         let userInput = '';
         let userInput2 = '';
+        let a = 1;
 
-        while (userInput === '' || userInput === null) 
+        while (userInput === '' && a === 1)
         {
             userInput = prompt('Enter Username:');
+            if(userInput === null)
+            {
+                a = 0;
+            }
         }
         console.log('Username entered:', userInput);
 
-        while (userInput2 === '' || userInput2 === null) 
+        while (userInput2 === '' && a === 1) 
         {
             userInput2 = prompt('Enter Password:');
+            if(userInput2 === null)
+            {
+                a = 0;
+            }
         }
         console.log('Password entered:', userInput2);
 
-        navigate('/driverHome/driverPage');
+        if(a === 1)
+        {
+            navigate('/driverHome/driverPage');
+        }
     }
 
     return(

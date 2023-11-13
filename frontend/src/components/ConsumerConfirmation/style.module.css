@@ -1,0 +1,56 @@
+
+  .accept {
+    background-color: #4caf50;
+    color: #fff;
+    width: 6vw;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    bottom: 100px;
+  }
+  
+  .accept:hover {
+    background-color: #45a049;
+  }
+
+  .name, .email, .phoneNumber {
+    border-color: black;
+    background-color: maroon;
+    color: white;
+    height: 5vh;
+    width: 30vw;
+    font-size: x-large;
+  }
+
+  .phonelabel, .emaillabel, .namelabel {
+    border-color: black;
+    background-color: rgba(165, 9, 9, 0.85);
+    color: white;
+    height: 5vh;
+    width: 30vw;
+    font-size: x-large;
+    margin-bottom: 2vh;
+  }
+
+  .confirm, .namelabel, .emaillabel, .phonelabel, .listitem, .drinklabel, .halllabel, .drinktext, .foodlabel  {
+    font-family: "Noto Sans", sans-serif;
+    font-size: xx-large;
+    font-weight: 700;
+    margin-bottom: 4vh;
+    color:white
+  }
+
+  .residenceDrop {
+    margin-top: 2vh;
+    width : 60vw;
+    border-color: black;
+    background-color: rgba(165, 9, 9, 0.85);
+    color: white
+  }
+  
+  .container {
+    justify-content: center;
+    background-color: rgba(165, 9, 9, 0.85);
+    height: 800vh;
+  }

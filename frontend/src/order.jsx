@@ -20,7 +20,7 @@ class Order extends Component{
                 residenceHall:residenceHall
             },
             foodList:foodList,
-            drinkList:drinkList,
+            drink:drinkList,
             diningSwipes:diningSwipes,
             eta:eta,
             payout:payout,

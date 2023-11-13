@@ -54,7 +54,7 @@ function DiningPopUp(props) {
 		navigate("/consumerHome/confirmation", {
 			state: {
 				food: JSON.stringify(list),
-				drink: JSON.stringify(drinkItem),
+				drink: drinkItem,
 				hall: props.hallName,
 			},
 		});

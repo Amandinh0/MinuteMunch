@@ -73,11 +73,7 @@ h3 {
 	text-align: right;
 }
 
-.reject-button {
-	padding: 10px 14px;
-	margin: 20px 40px 20px 10px; /* Adjusted margins */
-	background-color: #99ff99; /* For accept */
-}
+
 .accept-button {
 	padding: 10px 14px;
 	margin: 200px 40px 20px 10px; /* Adjusted margins */
@@ -85,6 +81,8 @@ h3 {
 }
 
 .reject-button {
+	padding: 10px 14px;
+	margin: 20px 40px 20px 10px; 
 	background-color: #ff704d; /* For reject */
 }
 

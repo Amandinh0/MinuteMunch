@@ -3,7 +3,7 @@ import OrdersAPI from "../../api/orders";
 import { useState, useEffect } from "react";
 import Order from "../../order";
 import Housing from "../data/locations.json";
-import "./jahja1234.css";
+import s from "./style.module.css";
 
 function ConsumerConfirmation({ post }) {
 	// const [currentOrder, setOrder] = useState();
@@ -37,9 +37,9 @@ function ConsumerConfirmation({ post }) {
 	const location = useLocation();
 	const { food, drink, hall } = location.state;
 
-    const parsedFood = JSON.parse(food);
-    const parsedDrink = JSON.parse(drink); 
-    const parsedHall = hall;
+  const parsedFood = JSON.parse(food);
+  const parsedDrink = drink; 
+  const parsedHall = hall;
 
 
 	const postOrder = (e) => {
@@ -178,41 +178,41 @@ function ConsumerConfirmation({ post }) {
 	};
 
     return (
-      <div>
-        <h1 className="helloh1">Confirmation Page</h1>
+      <div className={s.container}>
+        <div className={s.confirm}>Confirmation Page</div>
         {parsedFood.length > 0 && (
           <div>
-            <h3 className="helloh3">From {parsedHall}</h3>
-            <h2 className="helloh2">Food items:</h2>
-            <ul className="ulul">
+            <h3 className={s.halllabel}>From {parsedHall}</h3>
+            <div className={s.foodlabel}>Food items:</div>
+            <ul className="list">
               {parsedFood.map((item, index) => (
-                <li className="lil12" key={index}>{item}</li>
+                <li className={s.listitem} key={index}>{item}</li>
               ))}
             </ul>
           </div>
         )}
         <div>
-          <h2>Drink</h2>
-          <ul className="ulul">{parsedDrink}</ul>
+          <div className={s.drinklabel}>Drink</div>
+          <ul className={s.drinktext}>{parsedDrink}</ul>
         </div>
 
-        <label>
+        <label className={s.namelabel}>
           Name:
-          <input type="text" value={name} onChange={handleName} />
+          <input className={s.name}type="text" value={name} onChange={handleName} />
         </label>
         <br></br>
-        <label>
+        <label className={s.phonelabel}>
           Phone Number:
-          <input type="text" value={phoneNumber} onChange={handleNumber} />
+          <input className={s.phoneNumber} type="text" value={phoneNumber} onChange={handleNumber} />
         </label>
         <br></br>
-        <label>
+        <label className={s.emaillabel}>
           Umass Email:
-          <input type="text" value={email} onChange={handleEmail} />
+          <input className={s.email} type="text" value={email} onChange={handleEmail} />
         </label>
         <br></br>
         { <select
-        id="residenceDropdown"
+        className={s.residenceDrop}
         value={residenceHall}
         onChange={handleHall}
       >
@@ -225,7 +225,7 @@ function ConsumerConfirmation({ post }) {
       </select>
       }
       <br></br>
-      <button onClick={postOrder}>Order</button>
+      <button className={s.accept} onClick={postOrder}>Order</button>
         {/* <label>
           Residence Hall:
           <input type="text" value={residenceHall} onChange={handleHall} />

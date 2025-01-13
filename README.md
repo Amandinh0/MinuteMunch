@@ -1,6 +1,6 @@
 # MinuteMunch
 
-MinuteMunch is a sophisticated food delivery platform developed at HackUMass, UMass Amherst's annual hackathon. Designed specifically for the UMass Amherst community, it serves over 30,000 students across four dining halls. The platform streamlines the food ordering and delivery process, making campus dining more accessible and efficient.
+MinuteMunch is a food delivery platform developed at HackUMass, UMass Amherst's annual hackathon. Designed specifically for the UMass Amherst community, it serves over 30,000 students across four dining halls. The platform streamlines the food ordering and delivery process, making campus dining more accessible and efficient.
 
 ## 🚀 Features
 
